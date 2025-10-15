@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>IP’s e Consumos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <h2>IP’s e Consumos</h2>
+            <hr>
+
+            <h3>IP de Bloqueios e Fixos:</h3>
+            <ul>
+                <li><b>192</b> = BLOQUEIO FINANCEIRO;</li>
+                <li><b>172</b> = BLOQUEIO DE CONCENTRADOR;</li>
+                <li><b>177 e 138</b> = IP's são IPs Fixos.</li>
+            </ul>
+
+            <h3>Consumo de Banda Larga:</h3>
+            <p>
+                A largura de banda, expressa em bits por segundo (b/s) ou hertz (Hz), é a capacidade de transmissão de dados em uma rede. No contexto de conexões de rede, como internet banda larga, redes domésticas e empresariais, ela representa a velocidade de download e upload. Vários fatores influenciam a largura de banda, incluindo o tipo de conexão (cabeada ou Wi-Fi), tecnologia de transmissão e rotas utilizadas pelo provedor até o servidor acessado.
+            </p>
+
+            <p>
+                Aqui estão algumas estimativas de consumo médio de largura de banda por dispositivo comum em uma residência:
+            </p>
+            <ol>
+                <li><b>Navegação básica, redes sociais e e-mails:</b> Para atividades como navegar em sites, usar redes sociais e enviar e-mails, uma conexão de 10 a 25 Mbps geralmente é suficiente.</li>
+                <li><b>Streaming de música</b>: O streaming de música consome cerca de 2 a 5 Mbps por dispositivo.</li>
+                <li><b>Streaming de vídeo (SD)</b>: Para streaming de vídeo em definição padrão (SD), você pode precisar de 3 a 5 Mbps por dispositivo.</li>
+                <li><b>Streaming de vídeo (HD)</b>: Para streaming em alta definição (HD), considere cerca de 5 a 10 Mbps por dispositivo.</li>
+                <li><b>Jogos online</b>: Jogos online geralmente requerem 3 a 6 Mbps, mas isso pode variar dependendo do jogo.</li>
+            </ol>
+
+            <div class="alert alert-success">
+                <strong>Lembre-se</strong> de que quanto mais dispositivos estiverem conectados à rede, maior será a divisão da largura de banda disponível. Portanto, se muitos dispositivos estiverem ativos simultaneamente, a velocidade individual de cada dispositivo pode ser reduzida. 
+            </div>
+        
+
+    </div>
+    </div>
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

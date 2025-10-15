@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Comandos CMD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        
+        <div class="row">
+
+            
+
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-3">
+                
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-1" class="text-decoration-none text-body">IPCONFIG</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-2" class="text-decoration-none text-body">PING</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-3" class="text-decoration-none text-body">TRACERT (ou TRACEROUTE)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-4" class="text-decoration-none text-body">Comando de Rede</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-5" class="text-decoration-none text-body">pathping (Combina ping e tracert)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-6" class="text-decoration-none text-body">nslookup (Consulta de DNS)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-7" class="text-decoration-none text-body">netstat -an (Conexões Ativas e Portas)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-8" class="text-decoration-none text-body">Teste de Loopback (ping 127.0.0.1)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-9" class="text-decoration-none text-body">Teste para o Gateway Padrão (ping [Endereço do Gateway])</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-10" class="text-decoration-none text-body">Renovar Concessão de DHCP</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-11" class="text-decoration-none text-body">Limpar o Cache de DNS</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                </ul>
+
+            </div>
+            
+
+            <div class="col-sm-9">
+                <h1>Comandos CMD para Analise de Rede</h1>
+            
+            <p>Segue abaixo uma lista de comandos CMD úteis para análise e solução de problemas de rede:</p>
+
+            <h2>Para Teste e Análise de Conexão</h2>
+            <hr>
+            <h3 id="Sumario-1">IPCONFIG</h3>
+            
+            <p>
+                O comando <code>ipconfig</code> é usado para obter informações sobre a configuração de rede em sistemas Windows.
+            </p>
+            <p>
+                Para executá-lo, siga estas etapas:     
+            </p>
+            <ol>
+                <li>Pressione <kbd>Win + R</kbd> para abrir a caixa de diálogo <b>Executar</b>.</li>
+                <li>Digite <code>cmd</code> e pressione Enter para abrir o Prompt de Comando.</li>
+                <li>No Prompt de Comando, digite <code>ipconfig</code> e pressione Enter.</li>
+            </ol>
+            <p>
+                Esse comando fornecerá informações detalhadas sobre a configuração de rede, incluindo endereços IP, máscara de sub-rede, gateway padrão e muito mais.
+            </p>
+
+            <h4><code>ipconfig /all</code> (Subcomando Detalhado)</h4>
+            
+            <p>
+                Embora você já tenha o <code>ipconfig</code>, usar o modificador <code>/all</code> é crucial pois ele exibe informações de configuração de rede muito mais detalhadas para todos os adaptadores, ajudando a verificar se o cliente está pegando o endereço IP, Máscara, Gateway e DNS corretos do seu equipamento (roteador/ONU) ou do servidor DHCP. Algumas informações incluem:
+            </p>
+
+            <ul>
+                <li>Endereço Físico (<i>MAC Address</i>).</li>
+                <li>Se o DHCP está ativado.</li>
+                <li>Servidores DNS e WINS configurados.</li>
+                <li>Tempo de concessão (<i>lease time</i>) do DHCP.</li>
+            </ul>
+
+            <h3 id="Sumario-2">PING</h3>
+
+            <p>O comando ping é usado para testar a conectividade entre duas máquinas.</p>
+
+            <p>Para usá-lo:</p>
+            <ol>
+                <li>Abra o Prompt de Comando (<i>como explicado anteriormente</i>).</li>
+                <li>Digite <code>ping</code> seguido de um endereço IP ou FQDN (<i>Fully Qualified Domain Name</i>). Por exemplo: <code>C:\> ping www.unicesumar.edu.br</code></li>
+                <li>Observe as respostas, latência e perda de pacotes. Por padrão, ocorrem apenas 4 envios de pacote, o que é suficiente para esta tarefa.</li>
+            </ol>
+            <h4>Subcomandos:</h4>
+            <ul>
+                <li><code>-t</code>: Continua enviando pacotes até ser interrompido.</li>
+                <li><code>-a</code>: Resolve endereços para nomes de host.</li>
+                <li><code>-n count</code>: Define o número de solicitações de echo ICMP a serem enviadas.</li>
+                <li><code>-l size</code>: Define o tamanho do pacote a ser enviado.</li>
+            </ul>
+            <div class="alert alert-info">
+                <strong>Lembre-se</strong> de que o número de pacotes padrão é 4. Para especificar 150 pacotes, adicione a opção <code>-n 150</code> no Windows ou <code>-c 150</code> no Linux. Por exemplo: <code>ping -n 150 www.google.com</code> (<i>Windows</i>) ou <code>ping -c 150 www.google.com</code> (<i>Linux</i>).
+            </div>
+
+            <h3 id="Sumario-3">TRACERT (ou TRACEROUTE)</h3>
+
+            <p>O comando <code>tracert</code> (<i>ou traceroute</i>) é usado para rastrear a rota entre sua máquina e um destino.</p>
+            <p>Para usá-lo:</p>
+            <ul>
+                <li>Abra o Prompt de Comando (<i>como explicado anteriormente</i>).</li>
+                <li>Digite <code>tracert</code> seguido de um endereço IP ou FQDN. Por exemplo: <code>C:\> tracert www.unicesumar.edu.br</code>.</li>
+                <li>Analise as informações fornecidas, identificando os saltos intermediários (<i>hops</i>) na rota.</li>
+                <li>Aguarde, pois o comando pode demorar, mas ele tem um limite de até 30 saltos antes de desistir.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+                <h4 class="alert-heading">Observação:</h4>
+                <p>Quando o caminho for traçado, alguns casos teremos um retorno em alguns dos caminhos com o nome “<i>esgotado o tempo limite do pedido</i>” que indica que possivelmente o roteador/servidor são bloqueados de receber esse tipo de chamado. Mas isso não indica um erro geral no teste</p>
+            </div>
+
+            <h5>Quando tiver um erro, o retorno será semelhante ao a baixo:</h5>
+            <pre>
+PS C:\Users\Suporte - N073> tracert cellulamater.dyndns.org
+
+Rastreando a rota para cellulamater.dyndns.org [200.232.124.146]
+com no máximo 30 saltos:
+
+  1    <1 ms    <1 ms    <1 ms  192.168.88.1
+  2     5 ms     3 ms     2 ms  172.29.0.2
+  3     1 ms     1 ms     1 ms  sw01.itecb [172.29.248.77]
+  4     1 ms     1 ms     1 ms  sw02.iteg5 [172.29.248.42]
+  5    17 ms     1 ms     2 ms  router01.iteg5 [172.29.249.253]
+  6     1 ms     1 ms     1 ms  router01.iteg5 [172.29.2.182]
+  7    10 ms     3 ms     3 ms  8-242-72-45.static.ciriontechnologies.com.br [8.242.72.45]
+  8     3 ms     3 ms     3 ms  ae4.3501.ebr1.sap1.ciriontechnologies.net [200.189.212.166]
+  9     *        *        *     Esgotado o tempo limite do pedido.
+ 10     *        *        *     Esgotado o tempo limite do pedido.
+ 11     *        *        *     Esgotado o tempo limite do pedido.
+ 12    13 ms     9 ms     9 ms  200-232-41-90.customer.tdatabrasil.net.br [200.232.41.90]
+ 13     9 ms    11 ms    12 ms  200-232-41-90.customer.tdatabrasil.net.br [200.232.41.90]
+ 14     *        *        *     Esgotado o tempo limite do pedido.
+ 15     *        *        *     Esgotado o tempo limite do pedido.
+ 16     *        *        *     Esgotado o tempo limite do pedido.
+ 17     *        *        *     Esgotado o tempo limite do pedido.
+ 18     *        *        *     Esgotado o tempo limite do pedido.
+ 19     *        *        *     Esgotado o tempo limite do pedido.
+ 20     *        *        *     Esgotado o tempo limite do pedido.
+ 21     *        *        *     Esgotado o tempo limite do pedido.
+ 22     *        *        *     Esgotado o tempo limite do pedido.
+ 23     *        *        *     Esgotado o tempo limite do pedido.
+ 24     *        *        *     Esgotado o tempo limite do pedido.
+ 25     *        *        *     Esgotado o tempo limite do pedido.
+ 26     *        *        *     Esgotado o tempo limite do pedido.
+ 27     *        *        *     Esgotado o tempo limite do pedido.
+ 28     *        *        *     Esgotado o tempo limite do pedido.
+ 29     *        *        *     Esgotado o tempo limite do pedido.
+ 30     *        *        *     Esgotado o tempo limite do pedido.
+
+Rastreamento concluído.
+PS C:\Users\Suporte - N073>
+            </pre>
+
+            <h3 id="Sumario-4">Comando de Rede</h3>
+
+            <p>
+                Ao escrever esse comando no PowerShell com o cabo de rede conectado ao computador, você irá receber o nome dos adaptadores de rede e seus limites de hardware.
+            </p>
+
+            <code>Get-NetAdapter | Select-Object Name, LinkSpeed</code>
+            
+            <h5>Retorno do Comando:</h5>
+
+            <pre>
+Name                      LinkSpeed
+----                      ---------
+Ethernet                  1 Gbps
+Conexão de Rede Bluetooth 3 Mbps
+Wi-Fi                     0 bps
+            </pre>
+
+            <h3 id="Sumario-5"><code>pathping</code> (Combina <code>ping</code> e <code>tracert</code>)</h3>
+
+            <p>
+                É uma ferramenta de diagnóstico de rede mais avançada que combina as funcionalidades de <code>ping</code> e <code>tracert</code>. Ela envia pacotes para cada salto (<i>hop</i>) no caminho e, em seguida, calcula a perda de pacotes e a latência em cada um. Leva algum tempo para ser concluído (<i>pode levar alguns minutos, dependendo do número de saltos</i>).
+            </p>
+
+            <p>
+                <b>Como usar:</b> <code>pathping www.google.com</code> ou <code>pathping [endereço IP]</code>
+            </p>
+
+            <p>
+                Excelente para identificar exatamente <b>onde</b> na rota a perda de pacotes ou o aumento da latência está ocorrendo, ajudando a diferenciar se o problema é na rede interna do cliente, no seu equipamento ou mais adiante na rede do provedor.
+            </p>
+
+            <pre>
+PS C:\Users\Suporte - N073> pathping www.google.com
+
+Rastreando a rota para www.google.com [172.217.30.100]
+com no máximo 30 saltos:
+  0  N073 [192.168.88.251]
+  1  192.168.88.1
+  2  172.29.0.2
+  3  sw01.itecb [172.29.248.77]
+  4  sw02.iteg5 [172.29.248.42]
+  5  router01.iteg5 [172.29.249.253]
+  6  172.29.3.114
+  7  192.178.68.114
+  8  108.170.232.1
+  9  142.250.237.131
+ 10  gru06s35-in-f4.1e100.net [172.217.30.100]
+
+Calculando estatísticas para 250 segundos...
+            Origem aqui      Este nó/Vínculo
+            Perdido/Enviado  Perdido/Enviado
+Salto RTT        = Pct            = Pct       Endereço
+  0                                           N073 [192.168.88.251]
+                                0/ 100 =  0%   |
+  1    0ms     0/ 100 =  0%     0/ 100 =  0%  192.168.88.1
+                                0/ 100 =  0%   |
+  2    0ms     0/ 100 =  0%     0/ 100 =  0%  172.29.0.2
+                                0/ 100 =  0%   |
+  3    0ms     0/ 100 =  0%     0/ 100 =  0%  sw01.itecb [172.29.248.77]
+                                0/ 100 =  0%   |
+  4    0ms     0/ 100 =  0%     0/ 100 =  0%  sw02.iteg5 [172.29.248.42]
+                                0/ 100 =  0%   |
+  5    6ms     0/ 100 =  0%     0/ 100 =  0%  router01.iteg5 [172.29.249.253]
+                                0/ 100 =  0%   |
+  6    4ms     0/ 100 =  0%     0/ 100 =  0%  172.29.3.114
+                                0/ 100 =  0%   |
+  7    4ms     0/ 100 =  0%     0/ 100 =  0%  192.178.68.114
+                                0/ 100 =  0%   |
+  8    6ms     0/ 100 =  0%     0/ 100 =  0%  108.170.232.1
+                                0/ 100 =  0%   |
+  9    4ms     0/ 100 =  0%     0/ 100 =  0%  142.250.237.131
+                                1/ 100 =  1%   |
+ 10    5ms     1/ 100 =  1%     0/ 100 =  0%  gru06s35-in-f4.1e100.net [172.217.30.100]
+
+Rastreamento concluído.
+            </pre>
+
+            <h3 id="Sumario-6"><code>nslookup</code> (<i>Consulta de DNS</i>)</h3>
+
+            <p>
+                É essencial para diagnosticar problemas de resolução de nomes.  Ele consulta servidores DNS para obter o endereço IP associado a um nome de domínio.
+            </p>
+            <p>
+                <b>Como usar:</b>
+            </p>
+            <ul>
+                <li><code>nslookup www.google.com</code> (<i>Verifica a resolução usando o DNS configurado no PC</i>).</li>
+                <li><code>nslookup www.google.com 8.8.8.8</code> (<i>Verifica a resolução usando um servidor DNS específico, como o do Google, para contornar temporariamente o DNS do cliente/provedor</i>).</li>
+            </ul>
+            <p>
+                Se o cliente consegue fazer <code>ping</code> para um endereço IP, mas não para um nome de domínio, o problema está quase sempre relacionado à configuração ou falha do Servidor DNS.
+            </p>
+
+            <pre>
+PS C:\Users\Suporte - N073> nslookup www.google.com
+Servidor:  dns1.eteccinformatica.com.br
+Address:  177.185.40.19
+
+Não é resposta autoritativa:
+Nome:    www.google.com
+Addresses:  2800:3f0:4001:847::2004
+          172.217.30.100
+            </pre>
+
+            <h3 id="Sumario-7"><code>netstat -an</code> (<i>Conexões Ativas e Portas</i>)</h3>
+
+            <p>
+                Útil para ver o estado das conexões do cliente e identificar possíveis problemas de software. Ele exibe as conexões de rede ativas (<i>TCP e UDP</i>), as portas em que o computador está escutando (<i>listening</i>) e o estado das conexões.
+            </p>
+
+            <p>
+                <b>Como usar:</b> <code>netstat -an</code>
+            </p>
+
+            <p>
+                Ajuda a verificar se o computador do cliente está fazendo ou tentando fazer conexões. O modificador <code>-a</code> (<i>all</i>) mostra todas as conexões e o <code>-n</code> (<i>numeric</i>) mostra endereços e portas em formato numérico (<i>mais rápido</i>).
+            </p>
+
+            <pre>
+netstat -an
+
+Conexões ativas
+
+  Proto  Endereço local         Endereço externo       Estado
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING
+  ...
+  UDP    [fe80::8e1e:19b:f8c2:4287%16]:2177  *:*
+  UDP    [fe80::8e1e:19b:f8c2:4287%16]:62523  *:*
+PS C:\Users\Suporte - N073> ping localhost
+            </pre>
+
+            <h2>Para Diagnóstico de Hardware e Link</h2>
+            <hr>
+
+            <h3 id="Sumario-8">Teste de Loopback (<code>ping 127.0.0.1</code>)</h3>
+
+            <p>
+                Um teste fundamental e rápido. Testa o <i>stack</i> (<i>pilha</i>) TCP/IP interno do computador, sem envolver o adaptador de rede ou a rede externa.
+            </p>
+
+            <p>
+                <b>Como usar:</b> <code>ping 127.0.0.1</code> ou <code>ping localhost</code>
+            </p>
+
+            <p>
+                Se este ping falhar, o problema não é na sua conexão, mas sim no sistema operacional ou na pilha de rede do cliente, indicando a necessidade de reparo no software do PC.
+            </p>
+            <pre>
+PS C:\Users\Suporte - N073&gt ping localhost
+
+Disparando N073 [::1] com 32 bytes de dados:
+Resposta de ::1: tempo&lt1ms
+Resposta de ::1: tempo&lt1ms
+Resposta de ::1: tempo&lt1ms
+Resposta de ::1: tempo&lt1ms
+
+Estatísticas do Ping para ::1:
+    Pacotes: Enviados = 4, Recebidos = 4, Perdidos = 0 (0% de
+             perda),
+Aproximar um número redondo de vezes em milissegundos:
+    Mínimo = 0ms, Máximo = 0ms, Média = 0ms
+            </pre>
+
+            <h3 id="Sumario-9">Teste para o Gateway Padrão (<code>ping [Endereço do Gateway]</code>)</h3>
+
+            <p>
+                O primeiro passo lógico após o <code>ping</code> loopback. Testa a conectividade entre o computador do cliente e o seu roteador/ONU (<i>o primeiro salto</i>).
+            </p>
+
+            <p>
+                <b>Como usar:</b> Obtenha o endereço do gateway (ex: <code>192.168.1.1</code>) via <code>ipconfig</code> e use <code>ping 192.168.1.1</code> (<i>ou o endereço real</i>).
+            </p>
+
+            <p>
+                Uma falha aqui pode indicar problema no cabo, na placa de rede, ou no próprio roteador/ONU. Uma alta latência (<i>acima de 1-2 ms</i>) ou perda de pacotes neste ponto pode indicar problemas de Wi-Fi ou problemas de processamento no roteador local.
+            </p>
+
+            <h2>Para Manipulação e Reparo</h2>
+            <hr>
+
+            <h3 id="Sumario-10">Renovar Concessão de DHCP</h3>
+
+            <p>
+                Em muitos casos, o cliente pode ter um IP antigo ou incorreto. Libera o endereço IP atual do cliente e solicita um novo ao servidor DHCP.
+            </p>
+            <p><b>Como usar:</b></p>
+            <ol>
+                <li><code>ipconfig /release</code></li>
+                <li><code>ipconfig /renew</code></li>
+            </ol>
+            <p>
+                Resolve problemas de conflito de IP e garante que o cliente está usando a configuração de rede mais recente fornecida pelo seu equipamento.
+            </p>
+            
+            <h3 id="Sumario-11">Limpar o Cache de DNS</h3>
+
+            <p>
+                O cache de DNS pode armazenar informações desatualizadas. Limpa os dados de resolução de nomes armazenados em cache pelo sistema operacional.
+            </p>
+
+            <p>
+                <b>Como usar:</b> <code>ipconfig /flushdns</code>
+            </p>
+
+            <p>
+                Necessário quando a resolução de nome para um site específico está incorreta, mesmo que o DNS esteja funcionando corretamente (<i>um problema comum após mudanças de host ou IP de servidores</i>).
+            </p>
+
+                <btn-topo></btn-topo>
+
+            </div>
+        </div>
+    </div>
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

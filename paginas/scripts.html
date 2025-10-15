@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Scripts Padrões</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <h2>Scripts de Atendimento</h2>
+            <hr>
+
+            <p>
+                Inicie o Script com: Ordem de Serviço encaminhada devido (<i>continue com o motivo</i>)…
+            </p>
+
+            <p>
+                Sempre peça ao cliente para testar a conexão, e inclua na baixa: após isto realizado teste de navegação, cliente com acesso normalizado.
+            </p>
+            <div class="alert alert-warning">
+                <i><strong>Observação.:</strong> lembrar de colocar na baixa da OS se o cliente acompanhou a mesma. Caso não tenha acompanhado, deixar claro o motivo do porque.</i>
+            </div>
+
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            SCRIPT PADRÃO PARA TÉCNICOS DE CAMPO
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body copy-container">
+                            <div class="d-flex p-1 flex-row-reverse">
+                                <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                                    title="Copiar para a área de transferência">
+                                    <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                                </button>
+                            </div>
+
+                            <pre class="text-to-copy">
+
+Ordem de serviço encaminhada devido ao cliente estar com ...
+
+RELATO DO CLIENTE:
+
+...
+
+AVERIGUEI OS SEGUINTES TÓPICOS:
+
+- [] Fiz uma checagem das fontes dos equipamentos.
+- [] Chequei os Cabos de Rede, tanto WAN quanto LAN encontrados na rede.
+- [] Checagem de posicionamento dos aparelhos.
+- [] Realizar teste de Velocidade e Fibra (Caso teste de velocidade não seja bom, reiniciar o Router).
+- [] Realizei um teste de navegação usando a rede da cliente no Youtube, Navegação funcionando normalmente.
+- [] Checagem da intensidade do sinal WiFi nos principais cômodos da casa.
+- [] Testei a conexão nos dispositivos do cliente (celular, Smart TV, notebook, etc.).
+
+NO ROUTER CHEQUEI:
+
+- [] DNS: Configurado com o da [] Etecc ou [] Google.
+- [] UPnP: Verifiquei/Habilitei.
+- [] IPv6: Ativado no protocolo SLAAC.
+- [] Largura de banda da rede 2.4GHz: Ajustada para 20MHz para minimizar interferências e melhorar o alcance.
+- [] Acesso remoto: Confirmei se os IPs estavam corretos e, se necessário, reconfigurei para os padrões de acesso remoto.
+
+CLIENTE ACOMPANHOU A VISITA?
+
+[] Sim
+[] Não
+
+Justificativa caso o cliente não tenha acompanhado:
+...
+
+CONCLUSÃO DA VISITA:
+
+...
+
+INFORMAÇÕES ADICIONAIS PASSADAS AO CLIENTE:
+
+...
+
+TESTE FINAL DE NAVEGAÇÃO REALIZADO JUNTO AO CLIENTE:
+
+Depois de passar todas as informações acima, cliente alegou não ter nenhuma dúvida sobre elas.
+
+Após isto realizado teste de navegação junto ao cliente, o mesmo alegou:
+
+- [] Conexão normalizada  
+- [] Persistência do problema (encaminhado para suporte avançado)
+
+
+RELATÓRIO DOS TESTE:
+
+Teste de ping:
+
+Primeiro Teste
+min 0ms, max: 0ms, média: 0ms. 
+Enviados: 200, recebidos: 200, perdidos: 0
+
+Segundo Teste
+min 0ms, max: 0ms, média: 0ms. 
+Enviados: 200, recebidos: 200, perdidos: 0
+
+Teste de tracert: Sim [ ] Não [ ]
+
+Teste do cabo de rede: Ping [ ] Powermiter [ ]
+
+Descreva as condições do cabo caso não tenha feito no começo da OS...
+
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                            SCRIPT PADRÃO PARA LOS
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse " aria-labelledby="heading2"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body copy-container">
+                            <div class="d-flex p-1 flex-row-reverse">
+                                <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                                    title="Copiar para a área de transferência">
+                                    <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                                </button>
+                            </div>
+
+                            <pre class="text-to-copy">
+LOS
+
+Ordem de serviço encaminhada devido ao cliente estar com Los.
+
+Chegando ao local, realizei a averiguação do drop externo, porém nenhum romprimento aparente foi encontrado. 
+
+Na casa do cliente, medição do conector fibra retornou um sinal de Los, ao refazer conector, sinal permaneceu em Los. Necessário encaminhar equipe externa.
+
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading3">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                            SCRIPT PADRÃO TROCA DE VLAN
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse " aria-labelledby="heading3"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body copy-container">
+                            <div class="d-flex p-1 flex-row-reverse">
+                                <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                                    title="Copiar para a área de transferência">
+                                    <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                                </button>
+                            </div>
+
+                            <pre class="text-to-copy">
+
+Ordem de serviço encaminhada para troca de vlan.
+Chegando ao local, realizei a troca da vlan 0 para 0. Após isso fiz checagem com teste de velocidade. E então pedi para que cliente averiguasse conexão. O mesmo alegou navegação normalizada.
+
+
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                            SCRIPT PADRÃO PARA CLIENTE SEM CONTATO
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse " aria-labelledby="heading4"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body copy-container">
+                            <div class="d-flex p-1 flex-row-reverse">
+                                <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                                    title="Copiar para a área de transferência">
+                                    <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                                </button>
+                            </div>
+
+                            <pre class="text-to-copy">
+Classificação: cliente ausente
+Ordem de Serviço encerrada devido à impossibilidade de contato com o cliente, tanto pessoalmente quanto por telefone ou WhatsApp.
+
+Terceira tentativa de contato sem sucesso.
+
+
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                            SCRIPT PADRÃO PARA INFORMAÇÕES PASSADAS AO CLIENTE
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse " aria-labelledby="heading5"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body copy-container">
+                            <div class="d-flex p-1 flex-row-reverse">
+                                <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                                    title="Copiar para a área de transferência">
+                                    <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                                </button>
+                            </div>
+
+                            <pre class="text-to-copy">
+- [] Necessidade de Reiniciar o Roteador (a cada três dias/ 1 semana);
+- [] Diferença entre as Redes 2.4 GHz e 5 GHz do WiFi;
+- [] Distribuição de Banda Larga entre os ativos;
+- [] Problemas com TVBox e IPTV não Homologados pela Anatel;
+- [] Manutenção da Limpeza dos Aparelhos;
+- [] Como Evitar Interferências (*Micro-ondas, Outros aparelhos eletrônicos, paredes e etc...*);
+- [] Como Realizar testes de velocidade;
+- [] Como Realizar Testes de Lentidão;
+- [] Necessidade de Cabear Ativos e o porque;
+- [] Problema no uso de Repetidores;
+- [] Wifi sem Rede;
+- [] Oscilações em Períodos Específicos;
+- [] Quantidade de Ativos conectados ao Roteador;
+- [] Segundo ponto;
+- [] Ativos Antigos;
+- [] Manutenção de Cabos de Rede (Necessidade e como fazer o básico);
+- [] Problemas do Router em área externa (Avarias e cobranças por mau uso);
+- [] Intreferência da rede 2.4 em apartamentos;
+- [] Treinamento Básico de Análise de Rede:
+	- [] WiFiman: Análise de canal e distribuição do Wi-Fi. 
+	- [] SpeedTest: Teste de velocidade em conexões cabeadas e Wi-Fi. 
+	- [] Downdetector:
+
+Informações Extrar: 
+
+Caso o técnico tenha passado mais informações que não se enquadrem nessa lista, ele pode descrevê-la nesse campo...
+
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+    <script src="/src/copiar_transferencia.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>

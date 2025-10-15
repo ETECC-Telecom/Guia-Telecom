@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Página Grupo Huawei</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/paginas/configuracaorouter.html">Configuração de Router</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Grupo Huawei</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <h1 class="mb-3">Grupo Huawei</h1>
+            <hr>
+
+            <div class="col-sm-3">
+                <img class="img-fluid" src="/static/Imagens/card-routers_grupo.webp" alt="Imagem ilustrativa de um Router">
+                <p class="mt-3 text-center text-uppercase"><b>Grupo Huawei (WS, AX2 e AX3S)</b></p>
+                <p><b>Fontes:</b> 1A 12V</p>     
+                <div class="copy-container d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>IP:</b> <span class="text-to-copy">192.168.3.1</span>
+                    </div>
+
+                    <button class="btn btn-outline-dark copy-btn btn-sm m-1" type="button"
+                            title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+                <div class="copy-container d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>Login:</b> <span class="text-to-copy">admin (<i>Apenas na AX3S</i>)</span>
+                    </div>
+                </div>
+                <div class="copy-container d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>Senha:</b> <span class="text-to-copy"><span class="text-to-copy">PPPoE, senha do WiFi, admin (<i>Verificar Etiqueta!</i>)</span>
+                    </div>
+
+                </div>
+                <br>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Atenção:</strong> Vale lembrar que Aparelhos Huawei só são compatíveis com suas Fontes Originais!
+                </div>
+
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-1" class="text-decoration-none text-body">Configuração Inicial (Primeiro ou após reset)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-2" class="text-decoration-none text-body">Alteração de Senha de Acesso</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-3" class="text-decoration-none text-body">Troca de DNS</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-4" class="text-decoration-none text-body">Configuração de PPPoE</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-5" class="text-decoration-none text-body">Habilitar Acesso Remoto</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-6" class="text-decoration-none text-body">Configuração de WiFi</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-7" class="text-decoration-none text-body">Apontamento de Porta</a>
+                    </li>
+                </ul>
+
+            </div>
+            
+
+            <div class="col-sm-9">
+                <h2 id="Sumario-1">Configuração Inicial (Primeiro ou após reset)</h2>
+                <hr>
+                <div class="alert alert-primary" role="alert">
+                    <i>
+                        <b>N.T.:</b> Antes de iniciar a configuração do Router, é uma boa prática deixar o cabo de rede da entrada WAN desconectado:
+                    </i>
+                </div>
+
+                <p>
+                    Quando você reseta o Router, ou iniciar a sua primeira configuração, a página inicial que você irá cair quando acessar seu IP: "<b>192.168.3.1</b>" será a página a baixo, do qual terá que preencher o primeiro Radio Button indicando que "aceita o contrato";
+                </p>
+
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaoinicialgrupohuawei01.webp" alt="Imagem ilustrativa de Configuração Inicial">
+
+                <div class="alert alert-success" role="alert">
+                    <i> 
+                        <b>Dica.:</b> Quando estamos configurando via Wifi pelo Celular, o ideal é colocar a interface como para PC, e desabilitar os dados moveis;
+                    </i>
+                </div>  
+               
+                <p>
+                    Após clicar em <b>Vamos Continuar</b>, você será jogado em uma tela informando que você não está conectado, e um infográfico mostrando como deve ser realizado essa conexão. Configuramos o Router desconectado para agilizar o processo de configuração. Então basta clicar no ultimo link do card: "Definir Configurações de rede sem um cabo de rede conectado":
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaoinicialgrupohuawei02.png" alt="Imagem ilustrativa de Configuração Inicial">
+
+                <p>
+                    Na próxima janela, teremos que configurar com os dados de conexão do cliente. É essa etapa que sobe o cliente na Internet. Aqui você seleciona o Modo de Acesso a internet como sendo <b>PPPoE</b>, e em seguida preenche o formulário a baixo com o PPPoE do cliente na conta e senha. E em seguida clique no botão "<b>Avançar</b>":
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaoinicialgrupohuawei03.webp" alt="Imagem ilustrativa de Configuração Inicial">
+
+                <p>
+                    Agora iremos configurar o WiFi de nosso Router. Aqui é simples, basta definir o SSID (<i>Nome da rede</i>) e Senha para ele. E se daremos prioridade ao 5G (<i>recomendamos não habilitar essa opção a não ser que você saiba oque está fazendo</i>). 
+                </p>
+
+                <p>
+                    Mais a baixo temos também um formulário para configuração de acesso ao Router. Normalmente nessa senha colocamos como prioridade o PPPoE do cliente ou "<i>o padrão da etecc</i>". Mas prefira usar o PPPoE do cliente sempre. 
+                </p>
+
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaoinicialgrupohuawei04.png" alt="Imagem ilustrativa de Configuração Inicial">
+
+                <p>
+                    Por fim, você não muda nada na próxima tela, apenas clique em Avançar:
+                </p>
+
+                <img class="img-fluid rounded-4 mb-3" src="/static/Imagens/configuracaoinicialgrupohuawei05.webp" alt="Imagem ilustrativa de Configuração Inicial">
+                <img class="img-fluid mb-3 rounded-4" src="/static/Imagens/configuracaoinicialgrupohuawei06.webp" alt="Imagem ilustrativa de Configuração Inicial">
+
+                <p>
+                    Após isso, o router irá aplicar as configurações. Enquanto ele realiza esse processo você pode conectar o cabo de rede na porta WAN, e em seguida atualiza o MAC do ativo pelo MK para subir acesso. 
+                </p>
+
+                <p>
+                    Se tudo ocorrer bem, o acesso subirá logo em seguida.
+                </p>
+
+                
+                <h2 id="Sumario-2">Alteração de Senha de Acesso</h2>
+                <hr>
+
+                <p>
+                    Para trocar a senha de acesso dos Routers da Huawei é simples. Basta clicar no botão <i>Mais Funções -> Configurações do Sistema -> Alterar a Senha de Login</i>.  E na página que se abrir, basta alterar os dados no formulário:
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/alterarsenhagrupohuawei.webp" alt="Imagem ilustrativa de Alteração de Senha de Acesso">
+
+                <h2 id="Sumario-3">Troca de DNS</h2>
+                <hr>
+
+                <p>
+                    Para trocar o DNS do grupo Huawei basta acessar o equipamento, navegar até "<b>Conectar-se á Internet</b>", descer a página até a opção "<b>DNS Estático</b>", habilitar o mesmo e preencher os campos de formulário que irão surgir: "Servidor DNS Preferencial" e "<b>Servidor DNS Alternativo</b>". E após isso, basta clicar no botão salvar.
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configurardnsgrupohuawei.webp" alt="Imagem ilustrativa de Troca de DNS">
+
+                <h2 id="Sumario-4">Configuração de PPPoE</h2>
+                <hr>
+                
+                <p>
+                    A configuração de PPPoE é na mesma página do DNS, porém ao invés de descer a página, basta preencher os campos do formulário que irá surgir: 
+                </p>
+
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaopppoegrupohuawei.webp" alt="Imagem ilustrativa de Configuração de PPPoE">
+
+                <h2 id="Sumario-5">Habilitar Acesso Remoto</h2>
+                <hr>
+                <ul>
+                    <li>Na página do router, selecione a opção <i>Mais funções → Configurações de Segurança → Controle
+                            Remoto</i>.</li>
+                    <li>Permita o controle remoto e coloque os IPs:</li>
+                    <li>Porta 443.</li>
+                </ul>
+
+                <div class="copy-container">
+                    <p>
+                        <span class="text-to-copy">177.185.46.0</span>/24
+
+                        <button class="btn btn-outline-dark copy-btn btn-sm" type="button"
+                            title="Copiar para a área de transferência">
+                            <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                        </button>
+                    </p>
+                </div>
+                <div class="copy-container">
+                    <p>
+                        <span class="text-to-copy">138.94.84.0</span>/24
+
+                        <button class="btn btn-outline-dark copy-btn btn-sm" type="button"
+                            title="Copiar para a área de transferência">
+                            <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                        </button>
+                    </p>
+                </div>
+
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaoacessoremotohuawei.webp" alt="Imagem ilustrativa de Acesso Remoto"> 
+
+                <h2 id="Sumario-6">Configuração de WiFi</h2>
+                <hr>
+
+                <p>
+                    A parte do Wifi no grupo Huawei é dividido em duas partes. A primeira se assemelha ao processo de configuração do ativo. Para acessar essa página basta acessar o Router, clicar no botão "Meu Wifi", e você será direcionado a uma página de configuração simples da rede WiFi onde poderá habilitar as duas larguras de banda, nome e senha da rede: 
+                </p>
+
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaowifigrupohuaweip1.png" alt="Imagem ilustrativa de Configuração de WiFi">
+                <p>
+                    Agora, quando desejamos alterar configurações mais avançadas, basta clicar no botão Mais Funções -> Configurações de WiFi -> Configurações Avançadas de WiFi. Não será abordado cada atributo listado nessa tela, pois essa teoria já deve ser de conhecimento prévio do técnico. 
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaowifigrupohuaweip2.png" alt="Imagem ilustrativa de Configuração Avançada de WiFi">
+
+                <div class="alert alert-primary" role="alert">
+                    <p><i><b>N.T.:</b> Além das configurações avançadas de WiFi, na aba de "Configurações de Wifi" temos muitas outras opções de configuração que são interessantes serem estudadas.</i></p>
+                </div>
+        
+
+                <h2 id="Sumario-7">Apontamento de Porta</h2>
+                <hr>
+
+                <p>
+                    Agora vamos aprender a como realizar o apontamento de portas para configuração de acesso remoto no grupo Huawei. Primeiro devemos entrar nas configurações do Router e clicar no botão Mais Funções -> Configurações de Segurança -> Serviços NAT.
+                </p>
+
+                <p>
+                    Na página que será exibida teremos que fazer duas configurações. A Primeira será na propriedade <b>Mapeamento de Porta</b>, onde devemos adicionar um novo mapeamento clicando no botão mais "<b>+</b>". 
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaomapeamentodeporta1.webp" alt="Imagem ilustrativa de Apontamento de Porta">
+
+                
+
+                <p>
+                    Na nova página que irá aparecer vamos começar a preencher o formulário de configuração:
+                </p>
+
+                <ul>
+                    <li><b>Nome do Serviço:</b> Aqui você coloca o nome do mapemaento, no meu caso: "Segundo Ponto";</li>
+                    <li><b>Nome do Dispositivo:</b> Normalmente será listado o nome dos ativos que estão conectados a rede. Procure pelo router do segundo ponto;</li>
+                    <li><b>Protocolo:</b> Coloque TCP/UDP;</li>
+                    <li><b>Porta Interna:</b> 8081, porém depende da porta configurada no router do segundo ponto, normalmente usamos 8080 ou 8081; </li>
+                    <li><b>Porta Externa:</b> 8081, porém depende da porta configurada no router do segundo ponto, normalmente usamos 8080 ou 8081;</li>
+
+                </ul>
+                <p>
+                    Após preencher o formulário, clique em "Salvar".
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaomapeamentodeporta2.webp" alt="Imagem ilustrativa de Apontamento de Porta">
+
+                
+
+                <p>
+                    Agora devemos acionar a porta, e para isso, clique no botão mais "<b>+</b>" na propriedade "<b>Acionamento de Porta</b>". E na janela que se abrir, novamente iremos preencher o formulário:
+                </p>
+
+                <ul>
+                    <li><b>Nome do Serviço:</b> Nome igual ao que foi configurado no primeiro formulário;</li>
+                    <li><b>Protocolo:</b> Coloque em TCP/UDP</li>
+                    <li><b>Porta de Acionamento:</b> a mesma configurada no formulário anterior, ou seja, 8081;</li>
+                    <li><b>Ativar Porta:</b> nesse caso, 8081;</li>
+
+                </ul>
+                <p>
+                    E novamente clique no botão "Salvar".
+                </p>
+                <img class="img-fluid m-3 rounded-4" src="/static/Imagens/configuracaomapeamentodeporta3.webp" alt="Imagem ilustrativa de Apontamento de Porta">
+
+                
+                <btn-topo></btn-topo>
+
+            </div>
+        </div>
+    </div>
+    
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+    <script src="/src/copiar_transferencia.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>

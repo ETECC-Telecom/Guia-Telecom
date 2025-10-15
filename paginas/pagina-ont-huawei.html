@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Página ONT Huawei</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/paginas/configuracaorouter.html">Configuração de Router</a></li>
+                <li class="breadcrumb-item active" aria-current="page">ONT Huawei</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <h1 class="mb-3">ONT Huawei</h1>
+            <hr>
+
+            <div class="col-sm-3">
+
+                <img class="img-fluid" src="/static/Imagens/card-routers_g17.webp" alt="Imagem ilustrativa de um Router">
+                <p class="mt-3 text-center text-uppercase"><b>ONT Huawei EG8145X6-10</b></p>
+                <p><b>Fontes:</b> 1A ou 1.5A 12V</p>     
+                <div class="copy-container d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>IP:</b> <span class="text-to-copy">192.168.18.1</span>
+                    </div>
+
+                    <button class="btn btn-outline-dark copy-btn btn-sm m-1" type="button"
+                            title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+                
+                <div class="alert alert-danger" role="alert">
+                    <strong>Atenção:</strong> Vale lembrar que Aparelhos Huawei só são compatíveis com suas Fontes Originais!
+                </div>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-1" class="text-decoration-none text-body">Configuração Inicial (Primeiro ou após reset)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-2" class="text-decoration-none text-body">Alteração de Senha de Acesso</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-3" class="text-decoration-none text-body">Troca de DNS</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-4" class="text-decoration-none text-body">Configuração de PPPoE</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-5" class="text-decoration-none text-body">Habilitar Acesso Remoto</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-6" class="text-decoration-none text-body">Configuração de WiFi</a>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-7" class="text-decoration-none text-body">Acionamento Manual da Telefonia</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-8" class="text-decoration-none text-body">Apontamento de Porta</a>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <div class="col-sm-9">
+                <h2 id="Sumario-1">Configuração Inicial (Primeiro ou após reset)</h2>
+                <hr>
+
+                <h2 id="Sumario-2">Alteração de Senha de Acesso</h2>
+                <hr>
+
+                <p>
+                    Alterar a senha de Acesso da ONT Huawei é extremamente simples. Basta acessar o ativo, e no menu lateral esquerdo, clicar na <b>engrenagem</b>, ir até a aba <b>System Management</b> -> <b>Account Management</b>. Na janela que se abrir, selecione no formulário o <b>User Name</b> desejado, coloque a nova senha e confirme a nova senha nos campos New Password e Confirm Password:
+                </p>
+
+                <img class="img-fluid mb-3" src="/static/Imagens/alterarsenhadeacessoonthuawei.webp" alt="Imagem ilustrativa da alteração de senha de acesso em ONT Huawei">
+
+                <h2 id="Sumario-3">Troca de DNS</h2>
+                <hr>
+
+                <p>
+                    A configuração de DNS da ONT Huawei é extremamente simples. Basta acessar o ativo, e no menu lateral esquerdo, clicar na <b>engrenagem</b>, ir até a aba LAN -> DHCP Server e na janela que aparecer basta preencher o formulário de DNS primário e secundário:
+                </p>
+
+                <img class="img-fluid mb-3" src="/static/Imagens/configurardnsonthuawei.webp" alt="Imagem ilustrativa da troca de DNS em ONT Huawei">
+
+                <h2 id="Sumario-4">Configuração de PPPoE</h2>
+                <hr>
+
+                <p>
+                    Para realizar a alteração do PPPoE em uma ONT Huawei já configurada é simples. Basta acessar a mesma, navegar até o menu lateral esquerdo e clicar na <b>engrenagem</b> -> WAN e na janela que se abrir selecione a linha de configuração da rede de internet do cliente. No exemplo a baixo temos duas linhas, uma para internet e outra para a telefonia.  
+                </p>
+
+                <img class="img-fluid mb-3" src="/static/Imagens/configuracaopppoeonthuawei1.webp" alt="Imagem ilustrativa da configuração de PPPoE em ONT Huawei">
+            
+
+                <p>
+                    Após clicar na linha de conexão, será exibido um formulário, no qual algumas opções podem ser alteradas, e dentre essas opções temos a linha de <b>User Name</b> e <b>Password</b>, onde iremos inserir o novo PPPoE:
+                </p>
+
+                <img class="img-fluid mb-3" src="/static/Imagens/configuracaopppoeonthuawei2.webp" alt="Imagem ilustrativa da configuração de PPPoE em ONT Huawei">
+                
+                
+                <h2 id="Sumario-5">Habilitar Acesso Remoto</h2>
+                <hr>
+                <ul>
+                    <li>Na página do router, selecione a opção <i>Segurança→ Controle de Acesso de Dispositivo Preciso</i>.</li>
+                    <li>Após isso click que no Botão Novo.</li>
+                    <li>Na página do router, selecione a opção <i>Security→ Precise Device Acess Control</i>.</li>
+                    <li>Após isso click que no Botão New.</li>
+                    <li>Na janela que se abrir, vamos preencher os seguintes dados:</li>
+                    <li><b>Type</b>: Aplication;</li>
+                    <li><b>Priority</b>: 1;</li>
+                    <li><b>Port Type</b>: WAN;</li>
+                    <li><b>Port name</b>: All;</li>
+                    <li><b>Source IP Enddress</b>: 177.185.46.0 e 177.185.46.254;</li>
+                    <li><b>Mode</b>: Permit</li>
+                    <li>Agora, clique no botão apply, e em seguida, new novamente para uma nova regra. Nesse novo, iremos preencher</li>
+                    <li><b>os parâmetros da seguinte forma:</b></li>
+                    <li><b>Type</b>: Aplication;</li>
+                    <li><b>Priority</b>: 2;</li>
+                    <li><b>Port Type</b>: WAN;</li>
+                    <li><b>Port name</b>: All;</li>
+                    <li><b>Source IP Enddress</b>: 138.94.84.0 e 138.94.84.254;</li>
+                    <li><b>Mode</b>: Permit</li>
+                    <li>Após fazer isso seu acesso remoto estará habilitado nesse dispositivo.</li>
+                </ul>
+                <img src="/static/Imagens/0ae44920-b1e5-4179-9bf8-b1efc282bc2c.webp" class="mx-auto d-block mb-3">
+
+                    
+                <h2 id="Sumario-6">Configuração de WiFi</h2>
+                <hr>
+
+                <p>
+                    Agora varemos como configurar o WiFi da ONT Huawei. Existem duas formas de configurar o Wifi desse ativo. A primeira, é só para alterar o nome e senha, e a segunda é para fazer alterações de configurações mais avançadas. 
+                </p>
+
+                <p>
+                    <b>Vamos começar pela configuração de SSID e Senha:</b> 
+                </p>
+
+                <p>
+                    Assim que você acessa a ONT você cai na página de topologia da mesma. Basta clicar no ícone do Wifi, que será exibido para você um formulário tanto para a alteração do SSID e Senha da rede 2.4G quanto 5G. Após alteração basta salvar e esperar o ativo aplicar as configurações:
+                </p>
+                <img class="img-fluid mb-3" src="/static/Imagens/configuracaowifionthuawei01.webp" alt="Imagem ilustrativa da configuração de WiFi em ONT Huawei">
+                <p>
+                    <b>Alterações Avançadas:</b>
+                </p>
+
+                <p>
+                    Agora para configurações avançadas da rede WiFi, basta clicar no ícone da engrenagem no menu lateral esquerdo -> WLAN -> e clicar na opção "<b>Advanced Network...</b>" para ter acesso a página de configurações avançadas como: Canal, Domain, mode e entre outras configurações avançadas. 
+                </p>
+                <img class="img-fluid mb-3" src="/static/Imagens/configuracaowifionthuawei02.webp" alt="Imagem ilustrativa da configuração de WiFi em ONT Huawei">
+                
+
+                <div class="alert alert-primary" role="alert">
+                    <i>
+                        <b>N.T.:</b> Para a Configuração avançada de WiFi, temos ao todo duas páginas para cada rede (<i>2.4G e 5G</i>). Essas configurações são conceitos mais avançados que não serão abordados nessa sessão, mas vale a pena pesquisar!
+                    </i>
+                </div>
+
+                <h2 id="Sumario-7">Acionamento Manual da Telefonia</h2>
+                <hr>
+
+                <h2 id="Sumario-8">Apontamento de Porta</h2>
+                <hr>
+                
+                <p>Passo a passo de como realizar o apontamento de porta no Router Huawei EG8145X6-10.</p>
+
+                <img class="img-fluid mb-3" src="/static/Imagens/apontamento de Porta ONT-1.png" alt="Imagem ilustrativa do passo a passo de como realizar o apontamento de porta no Router Huawei EG8145X6-10">
+                <img class="img-fluid mb-3" src="/static/Imagens/apontamento de Porta ONT-2.png" alt="Imagem ilustrativa do passo a passo de como realizar o apontamento de porta no Router Huawei EG8145X6-10">
+                <img class="img-fluid mb-3" src="/static/Imagens/apontamento de Porta ONT-3.png" alt="Imagem ilustrativa do passo a passo de como realizar o apontamento de porta no Router Huawei EG8145X6-10">
+
+                <btn-topo></btn-topo>
+            </div>
+        </div>
+    </div>
+    
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+    <script src="/src/copiar_transferencia.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>

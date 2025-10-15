@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Configuração de Router</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Configuração de Router</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+
+            <h1>Configuração de Router</h1>
+            <hr>
+            <div class="alert alert-info" role="alert">
+                <h5 class="alert-heading">Dica:</h5>
+                <p>Em caso de Reset ou Configuração de Routers, o primeiro passo a se fazer é desconectar o cabo de internet do router para agilizar o processo de configuração.</p>                
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/static/Imagens/card-routers_grupo.webp" class="card-img-top" alt="Tip play card">
+                        <div class="card-body">
+                            <h5 class="card-title">Grupo Huawei</h5>
+                            <div class="d-grid gap-2">
+                                <a href="/paginas/pagina-grupo-huawei.html" class="btn btn-outline-dark btn-sm">Página</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/static/Imagens/card-routers_g27.webp" class="card-img-top" alt="Tip play card">
+                        <div class="card-body">
+                            <h5 class="card-title">Arche C5</h5>
+                            <div class="d-grid gap-2">
+                                <a href="/paginas/pagina-router-archec5.html" class="btn btn-outline-dark btn-sm">Página</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/static/Imagens/card-routers_g25.webp" class="card-img-top" alt="Tip play card">
+                        <div class="card-body">
+                            <h5 class="card-title">Intelbras</h5>
+                            <div class="d-grid gap-2">
+                                <a href="/paginas/pagina-router-intelbras.html" class="btn btn-outline-dark btn-sm">Página</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/static/Imagens/card-routers_g17.webp" class="card-img-top" alt="Tip play card">
+                        <div class="card-body">
+                            <h5 class="card-title">ONT Huawei</h5>
+                            <div class="d-grid gap-2">
+                                <a href="/paginas/pagina-ont-huawei.html" class="btn btn-outline-dark btn-sm">Página</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/static/Imagens/card-routers_g19.webp" class="card-img-top" alt="Tip play card">
+                        <div class="card-body">
+                            <h5 class="card-title">ONT TP-Link</h5>
+                            <div class="d-grid gap-2">
+                                <a href="/paginas/pagina-ont-tplink.html" class="btn btn-outline-dark btn-sm">Página</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            <div class="alert alert-info" role="alert">
+                <h5 class="alert-heading">Dica: Antes de Configurar</h5>
+                <p>Para acessar o IP do router, conecte-se ao Wi-fi do mesmo, e desative o Dados Moveis.</p>                
+            </div>
+            
+            <div class="alert alert-info" role="alert">
+                <h5 class="alert-heading">Dica: Sinais da PON</h5>
+                <p>Se a ONT ou ONU tá com o PON fixo ela já tá habilitada. Caso contrário, precisa habilitar.</p>                
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                <h5 class="alert-heading">Dica: Checagem de Acesso</h5>
+                <p>Normalmente se o router tiver configurado certinho você precisa perguntar no Grupo do <b>Suporte Externo</b> se o PPPoE está batendo em sistema,  assim da para saber se está tentando autenticar. Caso ele não esteja batendo em sistema você pede para verificar a ONU. Se a ONU estiver tudo certinho, aí pode ser algo no router. Aí faz aquele procedimento padrão, reseta e reconfigura, e se isso não resolver troca. E se a troca do router não resolver, troque a ONU. E por fim se a trocar da ONU não resolver, aí é algo em sistema e o pessoal da interna precisa ver.</p>                
+            </div>
+
+            <h2>Pontos de Atenção na Checagem dos Ativos:</h2>
+            <hr>
+
+            <h3>Parte Física</h3>
+
+            <h4>Fonte</h4>
+
+            <p>
+                Iniciar checando as Fontes dos ativos num teste mecânico (<i>movimentar a fonte na tomada para verificar se ela desliga</i>). Caso a mesma desligue no movimento, podemos concluir mau contato na tomada.
+            </p>
+
+            <ul>
+                <li>
+                    <b>Resolução:</b> Informar a Cliente para estar realizando a troca de Tomada/Benjamim e se possível, inserir um Filtro de Linha.
+                </li>
+            </ul>
+
+            <p>
+                Após checagem mecânica, verificar se as amperagens estão corretas, e se são as fontes corretas dos ativos inseridos.
+            </p> 
+
+            <h4>Cabos de Rede</h4>
+            <div class="alert alert-warning" role="alert">
+                <h5 class="alert-heading">Antes de verificar!</h5>
+                <p>Devem ser checados apenas cabos de rede principal (<i>WAN</i>), Segundo Ponto, Ativos como <b>TV's</b>, <b>TVBox</b>, <b>Vídeo Games</b>, <b>PC's</b> e <b>Câmeras</b> de fácil alcance. Já rede interna do cliente como servidores e entre outros não entra como obrigação do técnico.</p>                
+            </div>
+
+            <p>Temos duas forms de Checar cabos de rede usando o Powermitter:</p>
+            <p>
+                A primeira é para testar se há contato nas pontas apenas colocando o Powermitter em uma ponta, e a outra ponta adicionada no ativo, seja PC, Router e etc;
+            </p>
+
+            <img src="/static/Imagens/testecaboderedepowemitter1.webp" class="img-fluid rounded-5" alt="Teste de Cabo de Rede com Powermitter">
+            
+            <p class="mt-3">
+                A segunda forma é para testar sequência, onde colocamos o Powemitter em uma extremidade e a outra ponta do Powemitter na outra extremidade;
+            </p>
+            <img src="/static/Imagens/testecaboderedepowemitter2.webp" class="img-fluid rounded-5" alt="Teste de Cabo de Rede com Powermitter">
+
+            <div class="alert alert-warning mt-3" role="alert">
+                <h5 class="alert-heading">Observação...</h5>
+                <p>Só realize manutenção no cabo de segundo ponto, se o mesmo ter sido confeccionado por nós. Caso contrário, entrar em contato com a supervisão para averiguar se é possível realizar manutenção como cortesia. E deixar claro que aquela manutenção é uma cortesia para o cliente.</p>                
+            </div>
+
+            <h4>Fibra</h4>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>
+                        Primeiro devemos checar o Sinal da Fibra para verificar se não temos atenuação de Sinal, sempre dando preferência para o Pathcord (<i>cordão óptico</i>), e em caso de sinal alto, validar se o cordão não está atenuado, e posteriormente verificar sinal diretamente no Drop. 
+                    </p>
+                    <p>
+                        O Sinal esperado é sempre entre <b>-15</b> a <b>-25</b> em <b>1490nm</b> passou disso, devemos realizar a limpeza do conector e se não resolver, realizamos a troca.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="/static/Imagens/powermittertestefibra.webp" class="img-fluid rounded-3" alt="Medidor de Potência Óptica">
+                </div>
+            </div>
+
+            <h5 class="mt-3">Teste de Cordão Óptico</h5>
+            <p>
+                Quando temos uma Atenuação no Pathcord, porém no drop o sinal está normalizado, podemos checar se o mesmo está atenuado, ou seja, com alguma dobra aparente extrema, como podemos ver na imagem, onde o Pathcord além de atenuado está emaranhado com outros cabos. 
+            </p>
+            <p>
+                Agora, está tudo certo aonde não foi identificado nenhuma atenuação, ai devemos bater o laser para checar um rompimento ou trinca interna na fibra. Quando fazemos isso uma luz vermelha extrema é destacada no corpo do cordão óptico, como pode ver na imagem.
+            </p>
+            <div class="row">
+                <div class="col-sm-6 p-2">
+                    <img src="/static/Imagens/pathcordemaranhadoatenuado.webp" class="img-fluid rounded-3" alt="Medidor de Potência Óptica">
+                </div>
+                <div class="col-sm-6 p-2">
+                    <img src="/static/Imagens/pathcordrompimentointerno.webp" class="img-fluid rounded-3" alt="Medidor de Potência Óptica">
+                </div>
+            </div>
+
+            <h5>Boas Práticas com Pathcord</h5>
+
+            <p>
+                O ideal no que desrespeito ao cordão óptico, é sempre mantê-lo enrolado em seu próprio filamento com um diâmetro superior a <b>10cm</b> ou mais.  De de preferência com fixador de cada lado, seja um arame enrolado, ou uma fita isolante (<i>dê preferência para a fita isolante sempre</i>).
+            </p>
+            <p>
+                Nas imagens a baixo, podemos ver um exemplo onde o cordão foi enrolado e preso com dois arames de cada lado para impedir o mesmo de enrolar em si e atenuar. E no outro exemplo, o cordão foi enrolado para trás da ONT, o que permite proteger ainda mais o cordão, embora não seja esteticamente agradável. 
+            </p>
+
+            <div class="row">
+                <div class="col-sm-6 p-2">
+                    <img src="/static/Imagens/cordaoenroladocorretamente.webp" class="img-fluid rounded-3" alt="Medidor de Potência Óptica">
+                </div>
+                <div class="col-sm-6 p-2">
+                    <img src="/static/Imagens/cordaoenroladoatrasdaont.webp" class="img-fluid rounded-3" alt="Medidor de Potência Óptica">
+                </div>
+            </div>
+
+            <h3>Parte Lógica</h3>
+
+            <p>
+                Agora dentro das configurações do ativo da cliente, se tudo estiver conectado e funcionando corretamente, é interessante ter alguns pontos de checagem, como: 
+            </p>
+
+            <b>Atualização</b>
+
+            <p>
+                Verificar se o Router esta atualizado (<i>huawei atualiza automático, basta checar se está atualizado na página de atualização</i>).
+            </p>
+
+            Apenas fique de olho nas versões dos ativos:
+            <ul>
+                <li><b>Roteador Huawei (AX2):</b> Atualiza Automático, checar na página de Atualização.</li>
+                <li><b>Roteador Huawei (WS5200):</b> Atualiza Automático, checar na página de Atualização.</li>
+                <li><b>Ont huawei ax6 (ONU Roteada):</b> não precisa de atualização.</li>
+                <li><b>Ont huawei ax6-10 (ONU Roteada):</b> final 265</li>
+                <li><b>Roteador Intelbras (IWR3000n):</b> 1.9.8</li>
+                <li><b>Roteador TP Link (Archer C5):</b> 200427</li>
+            </ul>
+            <b>UPnP</b>
+
+            <p>
+                Separa as portas de trás do roteador, para que cada cabo trabalhe melhor. Ativar caso esteja desabilitado.
+            </p>
+
+            <b>IPV6</b>
+
+            <p>
+                Ativar (*caso esteja DHCPV6, mudar para SLAAC e reiniciar ativos para aplicar configuração*).
+            </p>
+
+            <b>Configuração de Rede WiFi:</b>
+
+            <ul>
+                <li><b>Canal</b>: automático (<i>tanto na rede 2.4 quanto 5G</i>);</li>
+                <li><b>Largura da banda</b>: Automático (<i>tanto na rede 2.4 quanto 5G</i>) a menos que haja a necessidade de alteração;</li>
+            </ul>
+            <b>Verificar o histórico de conexão</b>
+
+            <p>
+                A limpeza do histórico de dispositivos desconectados (<i>offlines</i>) em um roteador Wi-Fi pode ter algum ganho. Esses são os casos em que a limpeza realmente ajuda: Liberação de memória interna, Redução de bugs de DHCP, Evita conflito de nomes e IPs. 
+            </p>
+            
+        </div>
+    </div>
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

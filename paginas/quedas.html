@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Quedas Comuns</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <h2>Quedas</h2>
+            <hr>
+            <div class="alert alert-info">
+                <h5>Mais Comuns!</h5>
+                <ul>
+                    <li><b>Admin-Reset:</b> O administrador do NAS solicitou o encerramento da sessão.</li>
+                    <li><b>NAS-Request:</b> O NAS solicitou o encerramento da sessão. Em alguns modelos de equipamento esse motivo pode ser o mesmo de Admin-Reset.</li>
+                    <li><b>Lost-Carrier:</b> A comunicação entre o NAS e o equipamento do cliente foi perdida.</li>
+                    <li><b>User-Error:</b> Configuração/Comportamento incorreto no equipamento do cliente.</li>
+                    <li><b>User-Request:</b> O equipamento do cliente solicitou o encerramento da sessão.</li>
+                    <li><b>MK-ACCT:</b> Erro ao autenticar no concentrador, reiniciar via radius</li>
+                </ul>
+            </div>
+
+            <h3>Quedas e Exemplos</h3>
+            <hr>
+                 
+            <h4>🧰 Admin-Reset</h4>
+            <ul>
+                <li><b>Explicação:</b> O administrador do servidor (NAS) encerrou a sessão manualmente.</li>
+                <li><b>Exemplo prático:</b> Um técnico reinicia a sessão PPPoE de um cliente no sistema para aplicar uma nova configuração ou liberar IP bloqueado.</li>
+            </ul>        
+                    
+            <h4>🧰 NAS-Request</h4>
+            <ul>
+                <li><b>Explicação:</b> O próprio NAS (equipamento concentrador) solicitou o encerramento da sessão.</li>
+                <li><b>Exemplo prático:</b> O NAS detecta um erro interno ou atualização de software e derruba as conexões automaticamente para reiniciar serviços.</li>
+            </ul>        
+                    
+            <h4>⚠️ Lost-Carrier</h4>
+            <ul>
+                <li><b>Explicação:</b> A comunicação entre o NAS e o equipamento do cliente foi perdida.</li>
+                <li><b>Exemplo prático</b> O cabo de fibra foi rompido, o sinal óptico caiu (sem luz no ONT), ou houve desligamento de energia no roteador do cliente.</li>
+            </ul>        
+                    
+            <h4>⚙️ User-Error</h4>
+            <ul>
+                <li><b>Explicação:</b> O equipamento do cliente está configurado incorretamente ou se comportou de forma anormal.</li>
+                <li><b>Exemplo prático:</b> O roteador do cliente tenta autenticar com senha errada, ou envia pacotes PPPoE fora do padrão, derrubando a sessão.</li>
+            </ul>        
+                    
+            <h4>🧑‍💻 User-Request</h4>
+            <ul>
+                <li><b>Explicação:</b> O próprio equipamento do cliente solicitou o encerramento da sessão.</li>
+                <li><b>Exemplo prático:</b> O cliente desliga o roteador, reinicia o modem, ou altera as configurações de rede manualmente.</li>
+            </ul>        
+                    
+            <h4>🌐 Lost-Service</h4>
+            <ul>
+                <li><b>Explicação:</b> Houve uma falha de serviço na rede, interrompendo a conexão.</li>
+                <li><b>Exemplo prático:</b> Uma OLT ou switch intermediário travou, o que causa a perda temporária do serviço PPPoE para todos os clientes daquela rota.</li>
+            </ul>        
+                    
+            <h4>⏳ Idle-Timeout</h4>
+            <ul>
+                <li><b>Explicação:</b> A sessão ficou inativa por muito tempo e foi encerrada automaticamente.</li>
+                <li><b>Exemplo prático:</b> Um cliente não gera tráfego por horas (roteador ligado mas sem uso) e o servidor corta a sessão por ociosidade.</li>
+            </ul>        
+                    
+            <h4>⏰ Session-Timeout</h4>
+            <ul>
+                <li><b>Explicação:</b> O tempo máximo de sessão expirou (sessões com tempo limitado).</li>
+                <li><b>Exemplo prático:</b> Alguns provedores configuram o PPPoE para reiniciar automaticamente a cada 24 horas — ao chegar nesse tempo, a sessão é encerrada.</li>
+            </ul>        
+                    
+            <h4>🔄 Admin-Reboot</h4>
+            <ul>
+                <li><b>Explicação:</b> O administrador reiniciou o NAS, encerrando todas as sessões.</li>
+                <li><b>Exemplo prático:</b> O técnico faz uma manutenção no NAS, reinicia o equipamento, e todos os clientes conectados caem momentaneamente.</li>
+            </ul>        
+                    
+            <h4>⚡ Port-Error</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS detectou um erro físico ou lógico na porta de serviço.</li>
+                <li><b>Exemplo prático:</b> Porta da OLT danificada, poeira no conector óptico, ou erro elétrico na interface de rede.</li>
+            </ul>        
+                    
+            <h4>🧯 NAS-Error</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS encontrou um erro interno que forçou o encerramento da sessão.</li>
+                <li><b>Exemplo prático:</b> Falha de software no servidor PPPoE, memória cheia ou travamento de processo interno.</li>
+            </ul>        
+                    
+            <h4>🔁 NAS-Reboot</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS está sendo reiniciado e encerra as sessões antes do desligamento.</li>
+                <li><b>Exemplo prático:</b> Atualização de firmware na OLT ou servidor PPPoE provoca reinicialização controlada e queda temporária dos clientes.</li>
+            </ul>        
+                    
+            <h4>🧩 Port-Unneeded</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS encerrou a sessão porque a porta ficou “sem uso” ou foi liberada internamente.</li>
+                <li><b>Exemplo prático:</b> Após migração de VLANs ou reconfiguração interna da rede, o NAS libera portas antigas não utilizadas.</li>
+            </ul>        
+                    
+            <h4>🔄 Port-Preempted</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS derrubou a sessão porque a porta foi requisitada para outro uso.</li>
+                <li><b>Exemplo prático:</b> Uma nova autenticação PPPoE ocorre na mesma porta física, e o NAS finaliza a sessão antiga para abrir a nova.</li>
+            </ul>        
+                    
+            <h4>🚫 Port-Suspended</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS suspendeu temporariamente a porta e encerrou a sessão associada.</li>
+                <li><b>Exemplo prático:</b> Porta desabilitada por manutenção ou bloqueio automático após detecção de tráfego suspeito.</li>
+            </ul>        
+                    
+            <h4>❌ Service-Unavailable</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS não conseguiu entregar o serviço solicitado (ex: PPPoE, VLAN ou autenticação).</li>
+                <li><b>Exemplo prático:</b> O servidor de autenticação RADIUS está fora do ar, impedindo o estabelecimento da sessão.</li>
+            </ul>        
+                    
+            <h4>🔁 Callback</h4>
+            <ul>
+                <li><b>Explicação:</b> O NAS encerrou a sessão para reestabelecer uma nova automaticamente.</li>
+                <li><b>Exemplo prático:</b> Sistema PPPoE que encerra a sessão e reinicia imediatamente com novas credenciais ou parâmetros de IP.</li>
+            </ul>        
+                    
+            <h4>🖥️ Host-Request</h4>
+            <ul>
+                <li><b>Explicação:</b> O próprio equipamento do cliente solicitou o encerramento (semelhante ao User-Request).</li>
+                <li><b>Exemplo prático:</b> O roteador envia comando de encerramento PPPoE (PADT) após reinicialização, troca de WAN ou perda temporária de energia.</li>
+            </ul>
+
+        </div>
+    </div>
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Guia Telecom ETECC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="static/favicon.svg">
+    <script type="module" src="src/components/libEtecc.js"></script>
+    <link href="src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>DNS</h2>
+
+                <p>Aqui estão os DNS's usados pela ETECC:</p>
+
+                <h4>Google</h4>
+                <div class="copy-container input-group mb-3">
+                    <span class="form-control text-to-copy form-control-sm" id="texto3">
+                        8.8.8.8
+                    </span>
+                    <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                        title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+
+                <div class="copy-container input-group mb-3">
+                    <span class="form-control text-to-copy form-control-sm" id="texto3">
+                        8.8.4.4
+                    </span>
+                    <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                        title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+
+                <h4>ETECC</h4>
+                <div class="copy-container input-group mb-3">
+                    <span class="form-control text-to-cop form-control-sm" id="texto3">
+                        177.185.40.19
+                    </span>
+                    <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                        title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+                <div class="copy-container input-group mb-3">
+                    <span class="form-control text-to-copy form-control-sm" id="texto3">
+                        138.94.85.98
+                    </span>
+                    <button class="btn btn-outline-primary copy-btn btn-sm" type="button"
+                        title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+
+
+                <h3>Finalizações das OS de Retenção:</h3>
+
+                <p></p><b>CLIENTE AUSENTE</b><br>
+                Quando o técnico vai no local e não consegue contato com os familiares ou com os vizinhos.</p>
+
+                <p></p><b>RETIRADA FEITA</b><br>
+                Quando o técnico realiza a retirada dos equipamentos.</p>
+
+                <p></p><b>RETIRADA/TROCA DE PROVEDOR</b><br>
+                Quando o técnico realiza a retirada dos equipamentos devido a troca de provedor ou identifica no local que houve troca.</p>
+
+                <p></p><b>CONTATO REALIZADO</b><br>
+                Quando o técnico consegue contato com o cliente seja por telefone ou presencial.</p>
+
+                <p></p><b>INFORMAÇÃO</b><br>
+                Quando o técnico consegue  informação com os familiares ou vizinhos com sobre o cliente.</p>
+
+                <p></p><b>RETENÇÃO REALIZADA</b><br>
+                Quando o técnico vai até o local e consegue reverter o cancelamento seja oferecendo suporte,
+                Ponto adicional, benefícios Etecc.</p>
+
+                <p></p><b>ACORDO RETENÇÃO</b><br>
+                Utilizado para quando o técnico consegue realizar um acordo com o cliente.</p>
+
+                <p></p><b>MULTA / CARTA EXTRAJUDICIAL</b><br>
+                Quando o técnico leva a carta extrajudicial até a residência do cliente.</p>
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212529"><path d="M480-360q17 0 28.5-11.5T520-400q0-17-11.5-28.5T480-440q-17 0-28.5 11.5T440-400q0 17 11.5 28.5T480-360Zm-40-160h80v-240h-80v240ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></span> Feedback</h5>
+                        <p class="card-text">
+                            <b>Como está sua experiência com o Guia?</b> <br>
+                            Tem alguma sugestão ou encontrou algum problema? Envie seu feedback!
+                        </p>
+                        
+                        <div class="d-grid gap-2">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSebBnIyBVsDVgwoc97eJe_guH-DB16AM1nbl_XjyCqyby16Cw/viewform?usp=dialog" target="_blank" class="btn btn-outline-danger btn-sm" type="button">Google Forms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-8">
+                <h2>Padrão de Montagem de Cabo de Rede (RJ45): 568A e 568B</h2>
+                <img src="/static/Imagens/padrao-rj45.webp" class="mx-auto d-block img-fluid">
+
+                <p>Nosso padrão de rede utiliza a norma <b>T-568A</b> em ambas as pontas do cabo.</p>
+                <p>Ao montar o conector, posicione-o com a <b>trava de plástico para baixo</b> e siga a sequência de
+                    cores da imagem, da esquerda para a direita (<i>pino 1 ao 8</i>).</p>
+                <p><b>Sequência de Cores (<i>T-568A</i>):</b></p>
+                <ul>
+                    <li><b>1.</b> Verde e Branco</li>
+                    <li><b>2.</b> Verde</li>
+                    <li><b>3.</b> Laranja e Branco</li>
+                    <li><b>4.</b> Azul</li>
+                    <li><b>5.</b> Azul e Branco</li>
+                    <li><b>6.</b> Laranja</li>
+                    <li><b>7.</b> Marrom e Branco</li>
+                    <li><b>8.</b> Marrom</li>
+                </ul>
+
+                <p>Use o mesmo padrão (T-568A) nas duas pontas para criar um cabo direto, usado para conectar PCs,
+                    roteadores e outros equipamentos.</p>
+                
+                <h2>Padrão de Montagem de Cabo de Telefonia (RJ11)</h2>
+                <img src="/static/Imagens/grimpagemrj11.webp" class="mx-auto d-block img-fluid">
+                
+                <hr>
+
+                <h2>Padrões de Polimento de Conectores de Fibra Óptica (APC vs. UPC)</h2>
+                <br>
+                <img src="/static/Imagens/padraoAPCUPC.webp" class="mx-auto d-block img-fluid">
+                <br>
+                <p>O polimento da ponteira (<i>ou ferrule</i>) do conector de fibra é o que determina como a luz se
+                    reflete de volta para a fonte (<i>a perda de retorno</i>). Existem dois padrões principais:
+                    <b>UPC</b> (<i>Ultra Polished Connector</i>) e <b>APC</b> (<i>Angled Physical Contact</i>).</p>
+
+                <h3>1. Conector UPC (Ultra Polished Connector)</h3>
+                <ul>
+                    <li><b>Acabamento da Face</b>: A face final da fibra é polida em um formato plano e perpendicular à
+                        fibra (<i>0° de ângulo</i>), mas com um polimento de alta qualidade que a deixa com uma
+                        curvatura esférica (<i>em cúpul</i>a).</li>
+                    <li><b>Cor Padrão</b>: Geralmente, os conectores UPC são de cor azul.</li>
+                    <li><b>Desvantagem</b>: Embora a perda de inserção seja baixa, qualquer pequena folga no acoplamento
+                        faz com que a luz refletida (<i>o sinal "de volta"</i>) retorne diretamente para a fonte, o que
+                        pode desestabilizar lasers de alta potência ou sistemas que exigem baixa reflexão.</li>
+                    <li><b>Perda de Retorno (<i>Mínima</i>)</b>: Tende a ser de <b>-50dB</b> ou melhor.</li>
+                </ul>
+                <h3>2. Conector APC (Angled Physical Contact)</h3>
+                <ul>
+                    <li><b>Acabamento da Face</b>: A face final da fibra é polida em um formato angulado ou inclinado,
+                        geralmente em um ângulo de 8° (<i>às vezes 9°</i>), com uma curvatura esférica.</li>
+                    <li><b>Cor Padrão</b>: Os conectores APC são quase sempre de cor verde.</li>
+                    <li><b>Vantagem Principal</b>: Oferece uma perda de retorno significativamente melhor (<i>menor
+                            reflexão</i>), o que é vital para aplicações de RF, vídeo analógico e sistemas de alta
+                        potência ou com comprimentos de onda muito específicos (<i>como GPON ou WDM</i>).</li>
+                    <li><b>Perda de Retorno (<i>Mínima</i>)</b>: Tende a ser de <b>-60dB</b> ou melhor.</li>
+                </ul>
+
+                <div class="alert alert-danger" role="alert">
+                    <p><b>Obs.:</b> Nunca se deve conectar um conector APC (<i>verde</i>) diretamente a um conector UPC
+                        (<i>azul</i>). O ângulo diferente e o design de contato causam um grande desalinhamento entre os
+                        núcleos, resultando em:</p>
+                    <ol>
+                        <li>Altíssima Perda de Inserção.</li>
+                        <li>Danos Físicos permanentes à face polida de um ou de ambos os conectores.</li>
+                    </ol>
+                </div>
+
+                <hr>
+
+                <h2>Compatibilidades com Ativos pelas Cidades:</h2>
+
+                <p>Veja as compatibilidades de cada ativo com as cidades atendidas pela ETECC:</p>
+
+                <h4>Peruíbe</h4>
+                <ul>
+                    <li>Huawei</li>
+                    <li>TP-Link</li>
+                </ul>
+                <h4>Itanhaém</h4>
+                <ul>
+                    <li>Huawei</li>
+                    <li>TP-Link</li>
+                </ul>
+                <h4>Mongaguá</h4>
+                <ul>
+                    <li>Huawei</li>
+                    <li>TP-Link</li>
+                </ul>
+                <h4>Praia Grande</h4>
+                <ul>
+                    <li>Huawei</li>
+                </ul>
+
+                <h2>Tabela de Valor dos Ativos para Gerar Custo:</h2>
+                <p>Veja os valores dos ativos para gerar custo na OS:</p>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>ONU FiberHome:</b> R$300,00</li>
+                    <li class="list-group-item"><b>ONU Huawei:</b>  R$300,00</li>
+                    <li class="list-group-item"><b>ONU Reuso (<i>Não ofertar</i>):</b> R$256,00</li>
+                    <li class="list-group-item"><b>ONT TP-Link:</b> R$699,00</li>
+                    <li class="list-group-item"><b>ONT Huawei:</b> R$699,00</li>
+                    <li class="list-group-item"><b>Router Huawei WS:</b> R$299,00</li>
+                    <li class="list-group-item"><b>Router Huawei AX2:</b> R$299,00</li>
+                    <li class="list-group-item"><b>Router Huawei AX3S</b>: R$299,00</li>
+                    <li class="list-group-item"><b>Router Intelbras:</b> R$150,00</li>
+                </ul>
+
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0 lead">A tabela de preço deverá ser revisada a cada 3 meses!</p>
+                    <hr>
+                    <footer class="blockquote-footer"><small>Última atualização: <cite title="Source Title">13/10/2025</cite></small></footer>
+                </blockquote>
+
+            </div>
+            <script src="/src/copiar_transferencia.js"></script>
+
+        </div>
+        <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+
+    </div>
+    </div>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

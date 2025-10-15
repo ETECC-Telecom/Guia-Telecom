@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Página Arche C5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/paginas/configuracaorouter.html">Configuração de Router</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Arche C5</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <h1 class="mb-3">Arche C5</h1>
+            <hr>
+
+            <div class="col-sm-3">
+                <img class="img-fluid" src="/static/Imagens/card-routers_g27.webp" alt="Imagem ilustrativa de um Router">
+                <p class="mt-3 text-center text-uppercase"><b>Arche C5</b></p>
+                <p><b>Fontes:</b> 1A 12V</p>     
+                <div class="copy-container d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>IP:</b> <span class="text-to-copy">192.168.0.1</span>
+                    </div>
+
+                    <button class="btn btn-outline-dark copy-btn btn-sm m-1" type="button"
+                            title="Copiar para a área de transferência">
+                        <i class="bi bi-clipboard"></i> <span>Copiar</span>
+                    </button>
+                </div>
+            
+                <div class="copy-container d-flex justify-content-between align-items-center">
+                    <div>
+                        <b>Senha:</b> <span class="text-to-copy">PPPoE, senha do WiFi, admin</span>
+                    </div>
+                </div>
+
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-1" class="text-decoration-none text-body">Configuração Inicial (Primeiro ou após reset)</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-2" class="text-decoration-none text-body">Alteração de Senha de Acesso</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-3" class="text-decoration-none text-body">Troca de DNS</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-4" class="text-decoration-none text-body">Configuração de PPPoE</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-5" class="text-decoration-none text-body">Habilitar Acesso Remoto</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-6" class="text-decoration-none text-body">Configuração de WiFi</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-7" class="text-decoration-none text-body">Auto Reinicio</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#Sumario-8" class="text-decoration-none text-body">Apontamento de Porta</a>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <div class="col-sm-9">
+                <h2 id="Sumario-1">Configuração Inicial (Primeiro ou após reset)</h2>
+                <hr>
+
+                <h2 id="Sumario-2">Alteração de Senha de Acesso</h2>
+                <hr>
+
+                <h2 id="Sumario-3">Troca de DNS</h2>
+                <hr>
+
+                <h2 id="Sumario-4">Configuração de PPPoE</h2>
+                <hr>
+                
+                <h2 id="Sumario-5">Habilitar Acesso Remoto</h2>
+                <hr>
+
+                <h2 id="Sumario-6">Configuração de WiFi</h2>
+                <hr>
+
+                <h2 id="Sumario-7">Auto Reinicio</h2>
+                <hr>
+                <p>
+                    O Router ArcheC5 possuem uma função que permite a mesma reiniciar em um período programado. Para ativar essa opção vá na aba "<b>Avançado</b>", em seguida no menu lateral esquerdo vá em "<b>Ferramentas de Sistema</b>" e por fim "<b>Agendamento de Reinicialização</b>".
+                </p>
+
+                <p>
+                    Na janela que aparecer, você precisa clicar no checkbox "<b>Habilitar</b>" e configurar com os parâmetros desejados. Normalmente configuramos para reiniciar a cada uma semana as 3h00 da manhã:
+                </p>
+
+                <img class="img-fluid" src="/static/Imagens/configuracaotplinkautoreiniciaio.webp" alt="Imagem ilustrativa da configuração de auto reinicio em ONT TP-Link">
+
+                <h2 id="Sumario-8">Apontamento de Porta</h2>
+                <hr>
+
+                <btn-topo></btn-topo>
+
+            </div>
+        </div>
+    </div>
+    
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+    <script src="/src/copiar_transferencia.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>
