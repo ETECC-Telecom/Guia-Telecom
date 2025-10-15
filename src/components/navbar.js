@@ -36,10 +36,10 @@ export class NavBar extends HTMLElement {
                                 <a class="nav-link" href="/paginas/ipseconsumo.html">IP's e Consumo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="paginas/comandoscmd.html">Comandos CMD</a>
+                                <a class="nav-link" href="/paginas/comandoscmd.html">Comandos CMD</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="paginas/consulta_vlan.html">Consultar VLAN</a>
+                                <a class="nav-link" href="/paginas/consulta_vlan.html">Consultar VLAN</a>
                             </li>
                             
                         </ul>

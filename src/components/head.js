@@ -10,8 +10,8 @@ export class EteccHead extends HTMLElement{
 		this.shadowRoot.innerHTML=
         `
 
-        <link href="src/css/bootstrap.min.css" rel="stylesheet">
-        <script src="src/js/bootstrap.bundle.min.js"></script>
+        <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/src/js/bootstrap.bundle.min.js"></script>
 
         <div 
             class="p-5 text-white text-center"
