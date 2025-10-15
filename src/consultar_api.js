@@ -24,8 +24,8 @@ function Consultar_API() {
 
     // 3. Montar a URL da sua API
     // Note que sua URL no Flask tem o PPPoE como parte do caminho (path parameter)
-    const url_api = `http://127.0.0.1:5000/api/vlan_por_pppoe/${pppoe_digitado}`;
-
+    //const url_api = `http://127.0.0.1:5000/api/vlan_por_pppoe/${pppoe_digitado}`;
+    const url_api = `http://192.168.88.251:5000/api/vlan_por_pppoe/${pppoe_digitado}`;
     // 4. (OPCIONAL) Atualizar o status antes de consultar
     loading.classList.add('spinner-grow', 'spinner-grow-sm');
     
