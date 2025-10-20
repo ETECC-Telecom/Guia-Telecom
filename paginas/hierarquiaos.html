@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Hierarquia de Prioridades de Ordens de Serviço</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="/static/Imagens/infografico_hieraquia das OS.svg" class="img-fluid"/>
+            </div>
+            
+
+            <div class="col-sm-8">
+                 <h2>Hierarquia de Prioridades de Ordens de Serviço (OS)</h2>
+            <hr>
+
+            <p>
+                Para garantir a eficiência e a satisfação do cliente, o fluxo de trabalho de atendimento de Ordens de Serviço (<i>OS</i>) é regido por uma <b>rigorosa hierarquia de prioridades</b>. Esta classificação assegura que os casos mais urgentes, críticos ou de maior impacto sejam endereçados primeiro, otimizando a alocação de recursos e o tempo de resposta.
+            </p>
+
+            <p>
+                A ordem de atendimento deve seguir estritamente a sequência abaixo:
+            </p>
+
+            <ul>
+                <li><b>OS's com observação para o período "<i>manhã</i>"</b>: Prioridade máxima para cumprir o compromisso de atendimento agendado ou solicitado especificamente para o início do dia.</li>
+                <li><b>Pessoa Jurídica - PJ (<i>Qualquer OS</i>)</b>: Atendimentos a empresas e clientes corporativos têm prioridade elevada, dado o potencial impacto em suas operações e negócios.</li>
+                <li><b>Los, Sem acesso Geral e Prioridade</b>: Ordens de serviço que envolvem interrupção total (Los) do serviço para o cliente e/ou que não possuem classificação geral de acesso ou prioridade, indicando uma falha crítica que exige atenção imediata.</li>
+                <li><b>Reincidência e Cliente Insatisfeito</b>: Casos em que o problema persiste (reincidência) ou que envolvem um cliente já manifestamente insatisfeito. Priorizar estes casos é crucial para a recuperação da confiança e a retenção do cliente.</li>
+                <li><b>Cliente s/ Contato - Sem Acesso</b>: Clientes que não puderam ser contatados, mas estão totalmente sem o serviço (Sem Acesso), necessitando de uma visita para diagnóstico e solução.</li>
+                <li><b>Lentidão e Oscilação</b>: Problemas que degradam a qualidade do serviço (Lentidão ou Oscilação), afetando a experiência de uso, mas sem interrupção total.</li>
+                <li><b>Cliente s/ Contato - Com Acesso</b>: Clientes que não puderam ser contatados, mas ainda possuem algum nível de acesso ao serviço (Com Acesso), sendo a visita para resolução de menor urgência que os casos sem acesso.</li>
+                <li><b>Demais OS's</b>: Inclui todas as Ordens de Serviço que não se enquadram nas categorias superiores, como manutenções preventivas ou outras solicitações de menor impacto imediato.</li>
+            </ul>
+            <h3>Regra de Otimização de Rota</h3>
+
+            <p>
+                A única exceção a esta hierarquia é a <b>Otimização de Rota</b>. A ordem de prioridade pode ser <i>quebrada</i> apenas se a OS de maior prioridade estiver com um <b>deslocamento (<i>distância</i>) acima de 10 minutos</b> do técnico em campo. Nesses casos, o técnico pode atender uma OS de menor prioridade que esteja em um raio de deslocamento mais eficiente, garantindo a produtividade da equipe e a agilidade no atendimento geral.
+            </p>
+
+
+                <btn-topo></btn-topo>
+
+            </div>
+        </div>
+    </div>
+
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+    <script src="/src/copiar_transferencia.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>
