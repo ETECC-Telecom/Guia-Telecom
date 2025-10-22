@@ -27,7 +27,6 @@ function Consultar_API() {
     //const url_api = `http://127.0.0.1:5000/api/vlan_por_pppoe/${pppoe_digitado}`;
     const url_api = `https://ti.eteccresolve.com.br/api_vlan.php?token=etecc111426&pppoe=${pppoe_digitado}`;
     // 4. (OPCIONAL) Atualizar o status antes de consultar
-    console.log(url_api)
     loading.classList.add('spinner-grow', 'spinner-grow-sm');
     
     container_resultado.textContent = ' Consultando, Aguarde...';
@@ -48,11 +47,10 @@ function Consultar_API() {
             return response.json();
         })
         .then(data => {
-            console.log(data)
             // 6. Atualizar o <span> com o resultado (a VLAN)
             loading.classList.remove('spinner-grow', 'spinner-grow-sm');
 
-            container_resultado.textContent = data["VLAN"];
+            container_resultado.textContent = data['data']['vlan'];
             container_resultado.parentElement.classList.remove('alert-info');
             container_resultado.parentElement.classList.add('alert-success'); // Sucesso
         })
