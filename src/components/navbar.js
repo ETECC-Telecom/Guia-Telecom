@@ -44,7 +44,7 @@ export class NavBar extends HTMLElement {
                             <li class="nav-item">
                                 <a class="nav-link" href="/paginas/hierarquiaos.html">Hierarquia de OS</a>
                             </li>
-        
+                            
                         </ul>
                     </div>
                 </div>

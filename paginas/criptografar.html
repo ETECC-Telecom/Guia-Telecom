@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Comandos CMD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        <div class="row">
+            
+            <div class="col-sm-12">
+                <h2>Página de Criptografia do Site</h2>
+                <hr>
+       
+                <form>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem Original</label>
+                        <input  type="text" id="mensagem" value="Minha mensagem secreta" class="form-control" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Insira o Texto que deseja criptografar.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chave" class="form-label">Chave (Senha):</label>
+                        <input type="text" id="chave" value="secreto123" class="form-control">
+                    </div>
+                    
+                    <a onclick="criptografar()" class="btn btn-primary">Criptografar</a>
+                    <a onclick="descriptografar()" class="btn btn-primary">Descriptografar</a>
+                </form>
+                <br>
+                <div class="alert alert-secondary" role="alert">
+                    <p>Criptografado: <span id="outputCriptografado"></span></p>
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    <p>Descriptografado: <span id="outputDescriptografado"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+    <script src="/src/crypto-js.min.js"></script>
+    <script src="/src/criptografia.js"></script>
+</body>
+
+</html>
