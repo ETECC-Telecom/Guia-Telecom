@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Página para Sortear Técnicos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/favicon.svg">
+    <script type="module" src="/src/components/libEtecc.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <etecc-head></etecc-head>
+
+    <etecc-navbar></etecc-navbar>
+
+    <div class="container mt-5">
+        <div class="row">
+            
+            <div class="col-sm-12">
+                <h2>Página para Sortear Técnicos</h2>
+                <hr>
+       
+                <label for="comment">Lista de Técnicos:</label>
+                <textarea class="form-control" rows="5" id="lista" name="text" placeholder="Separe Cada Técnico com Quebra de Linha..."></textarea>
+                <br>
+                <div class="d-grid">
+                    <button type="button" onclick="Sortear_Tecnico()" class="btn btn-outline-dark btn-block">Sortear</button>
+                </div>
+                <br>
+                <div class="alert alert-success">
+                    <ol id="Container">
+
+                    </ol>
+                </div>
+
+                <!--        FIM DA PÁGINA        -->
+            </div>
+        </div>
+    </div>
+
+    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+
+    <etecc-footer></etecc-footer>
+
+    <script src="/app.js"></script>
+    <script src="/src/sortear.js"></script>
+</body>
+
+</html>
