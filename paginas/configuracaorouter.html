@@ -119,6 +119,28 @@
                 <p>Normalmente se o router tiver configurado certinho você precisa perguntar no Grupo do <b>Suporte Externo</b> se o PPPoE está batendo em sistema,  assim da para saber se está tentando autenticar. Caso ele não esteja batendo em sistema você pede para verificar a ONU. Se a ONU estiver tudo certinho, aí pode ser algo no router. Aí faz aquele procedimento padrão, reseta e reconfigura, e se isso não resolver troca. E se a troca do router não resolver, troque a ONU. E por fim se a trocar da ONU não resolver, aí é algo em sistema e o pessoal da interna precisa ver.</p>                
             </div>
 
+            <h2>Configurando a LAN Manual:</h2>
+            <hr>
+
+            <p>
+                A configuração da LAN ilustra um cenário comum: uma ONT com o DHCP desabilitado por padrão ou que foi resetada. Nesses casos, o computador <b>não receberá um IP automático</b>. Para acessar a ONT (<i>cujo IP padrão pode ser <b>192.168.1.1</b>, conforme a etiqueta</i>), é necessário configurar manualmente um IP na placa de rede do computador na mesma faixa, por exemplo, <b>192.168.1.2</b> com máscara <b>255.255.255.0</b>. Não é necessário configurar Gateway ou DNS para esse acesso local.
+            </p>
+
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <img class="img-fluid rounded-5" src="/static/Imagens/configurar_lan_manual1.webp"/>
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-fluid rounded-5" src="/static/Imagens/configurar_lan_manual2.webp"/>
+                </div>
+            </div>
+            
+            <img class="img-fluid mb-3 rounded-5" src="/static/Imagens/configurar_lan_manual.webp"/>
+
+            <p>
+                Após configurar o IP manual e confirmar o ping para <b>192.168.1.1</b>, a ONT pode ser acessada com as credenciais, por exemplo. 
+            </p>
+
             <h2>Pontos de Atenção na Checagem dos Ativos:</h2>
             <hr>
 
@@ -260,7 +282,7 @@
             
         </div>
     </div>
-    <etecc-revisao version="000" author="Raphael dos Anjos" date="10/10/2025"></etecc-revisao>
+    <etecc-revisao version="001" author="Raphael dos Anjos" date="24/10/2025"></etecc-revisao>
 
     <etecc-footer></etecc-footer>
 
