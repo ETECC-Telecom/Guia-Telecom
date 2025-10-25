@@ -47,9 +47,69 @@ function descriptografar() {
     }
 }
 
+function descriptografar_span(chave, data){
+   
+    try {
+        const bytes  = CryptoJS.AES.decrypt(data, chave);
+        const originalText = bytes.toString(CryptoJS.enc.Utf8);
+        return originalText;
+
+    } catch (error) {
+        return '<kbd>Sensível</kbd>';
+    }
+}
+
+function capturar_chave(){
+
+}
+
+function capturarChaveDaCache(chaveProcurada) {
+    // 1. Verifica se o localStorage é suportado e está disponível
+    if (typeof(Storage) === "undefined") {
+        console.error("Desculpe! O Web Storage (localStorage) não é suportado neste navegador.");
+        return null;
+    }
+
+    // 2. Tenta obter o valor da chave
+    // O método .getItem() do localStorage retorna:
+    // - O valor (como string) se a chave existir.
+    // - null se a chave NÃO existir.
+    const valorArmazenado = localStorage.getItem("CHAVE");
+
+    // 3. Verifica se a chave existe (o valor não é null)
+    if (valorArmazenado !== null) {
+        console.log(`✅ Chave '${chaveProcurada}' encontrada!`);
+        console.log(`🔑 Valor capturado: ${valorArmazenado}`);
+        
+        // Se o valor armazenado for um objeto (salvo como string JSON),
+        // você precisará de JSON.parse(valorArmazenado)
+        
+        return valorArmazenado;
+    } else {
+        console.warn(`❌ Chave '${chaveProcurada}' NÃO existe no localStorage.`);
+        return null;
+    }
+}
+
 window.addEventListener('load', function() {
     // Este código será executado APÓS a página e TODOS
     // os seus recursos (imagens, vídeos, etc.) estarem carregados.
     console.log("A página e todos os seus recursos estão totalmente carregados!");
     // Você pode chamar sua função aqui
+    const DATA = this.document.getElementsByClassName('criptografado')
+
+    const Chave = capturarChaveDaCache();
+
+
+    for(i in DATA){
+        let valor = DATA[i].getAttribute('value')
+
+        let descriptografado = descriptografar_span(Chave, valor)
+        
+        console.log('')
+        if (descriptografado != ''){
+            DATA[i].innerHTML = descriptografado
+        }
+        console.log(DATA[i], valor, descriptografado);
+    }
 });

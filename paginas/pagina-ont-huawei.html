@@ -40,7 +40,11 @@
 
                 <img class="img-fluid" src="/static/Imagens/card-routers_g17.webp" alt="Imagem ilustrativa de um Router">
                 <p class="mt-3 text-center text-uppercase"><b>ONT Huawei EG8145X6-10</b></p>
-                <p><b>Fontes:</b> 1A ou 1.5A 12V</p>     
+                <p>
+                    <b>Fontes:</b> 1A ou 1.5A 12V <br>
+                    <b>Login:</b> <span class="criptografado" value="U2FsdGVkX193UgHySUJuMwjnUR4SXd/BhiX03KrKAkM="><kbd>Sensível</kbd></span><br>
+                    <b>Senha:</b> <span class="criptografado" value="U2FsdGVkX18Ett+3Ogjalmp4DX3fmwAoa3t+79M4XRc="><kbd>Sensível</kbd></span>   
+                </p>     
                 <div class="copy-container d-flex justify-content-between align-items-center">
                     <div>
                         <b>IP:</b> <span class="text-to-copy">192.168.18.1</span>
@@ -88,6 +92,67 @@
             <div class="col-sm-9">
                 <h2 id="Sumario-1">Configuração Inicial (Primeiro ou após reset)</h2>
                 <hr>
+
+                <p>
+                    Agora iremos aprender a como configurar a ONT Huawei de forma manual. O primeiro passo é realizar o Reset, que nesse caso, basta desligar a ONT, e ao ligar, pressione por 15 a 20 segundos o botão <b>reset</b>.
+                </p>
+
+                <p>
+                    Para se conectar a ONT, você pode acessar diretamente pelo WiFi, com os dados encontrados na na etiqueta atrás da ONT. Se por algum motivo não consiga se conectar ao WiFi, então você precisa configurar um ip local fixo na faixa de IP do Router, por exemplo: <b>192.168.18.100</b> (<i>Procedimento esse que já foi ensinada na página inicial de Configuração de Router</i>).
+                </p>
+                
+                <img src="/static/Imagens/configuracao_inicial_ont_etiqueta.webp" class="img-fluid mb-3"/>
+
+                <p>
+                    Quando estiver conectado no ativo, você consegue acessar o mesmo pelo IP do Gateway. Agora basta colocar o Login <span class="criptografado" value="U2FsdGVkX193UgHySUJuMwjnUR4SXd/BhiX03KrKAkM="><kbd>Sensível</kbd></span>, e senha <span class="criptografado" value="U2FsdGVkX18Ett+3Ogjalmp4DX3fmwAoa3t+79M4XRc="><kbd>Sensível</kbd></span>, e caso a senha nao funcione, use o <span class="criptografado" value="U2FsdGVkX193UgHySUJuMwjnUR4SXd/BhiX03KrKAkM="><kbd>Sensível</kbd></span> e a senha que está na etiqueta do ativo. 
+                </p>
+
+                <img src="/static/Imagens/configuracao_inicial_ont_login.webp" class="img-fluid mb-3"/>
+
+                <p>
+                    Agora iremos iniciar as Configurações. Após login, você será direcionado para uma página de configuração inicial do ativo. Evite usar essa função, vamos clicar no botão <b>Exit</b> para seguir o Passo a Passo. 
+                </p>
+
+                <img src="/static/Imagens/configuracao_inicial_ont_exit.webp" class="img-fluid mb-3"/>
+
+                <p>
+                    Agora vamos habilitar as portas LAN em Menu Lateral Esquerdo (<i>Engrenagem</i>) -> LAN -> Layer 2/3 Port. Na página que abrir selecione os checkbox de LAN1 a 4 e clique no botão <b>Apply</b>.
+                </p>
+
+                <img src="/static/Imagens/configuracao_inicial_ont_hab_lan.webp" class="img-fluid mb-3"/>
+
+                <p>
+                    Na página do ativo, vamos ao menu lateral esquerdo (<i>engrenagem</i>) -> WAN e vamos clicar no botão NEW. 
+                </p>
+
+                <img src="/static/Imagens/configuracao_inicial_ont_add_wan.webp" class="img-fluid mb-3"/>
+
+                <p>
+                    No formulário que surgir, habilite as opções: 
+                </p>
+
+                <ul>
+                    <li><b>Ative o Enable Wan</b>;</li>
+                    <li><b>Encapsulation Mode</b>: Selecione PPPoE;</li>
+                    <li><b>Protocol Type</b>: Selecione IPv4 e IPv6;</li>
+                    <li><b>Wan Mode</b>: Selecione Router WAN;</li>
+                    <li><b>Service Type</b>: Selecione a opção TR069_INTERNET;</li>
+                    <li><b>Enable VLAN</b>: Ative a opção e sete a VLAN em VLAN ID;</li>
+                    <li><b>MRU</b>: Adicione o valor 1492;</li>
+                    <li><b>User Name e Password</b>: Coloque o PPPoE do cliente;</li>
+                    <li><b>Habilite todos os checkboxs de LAN e SSID1 e 5</b>;</li>
+                </ul>
+
+                <img src="/static/Imagens/configuracao_inicial_ont_config_wan.webp" class="img-fluid mb-3"/>
+
+                <p>
+                    Após realizar todos esses ajustes, vamos ao final da página e clicar em <b>Apply</b>. E esse é o básico para configurar esse modelo de ONT manual, o resto para subir acesso é provisionar pela interna e atualizar o MAC. 
+                </p>
+
+                <p>
+                    O restante das configurações, pode ser as mesmas dos tutoriais a baixo.
+                </p>
+
 
                 <h2 id="Sumario-2">Alteração de Senha de Acesso</h2>
                 <hr>
@@ -184,6 +249,60 @@
 
                 <h2 id="Sumario-7">Acionamento Manual da Telefonia</h2>
                 <hr>
+
+                    <p>
+                        Antes de qualquer coisa, para uma analise simples da telefonia na ONT, você pode consultar após configuração o numero de telefone facilmente pela página inicial:
+                    </p>
+
+                    <img src="/static/Imagens/ont_huawei_telefonia_manual_1.webp" class="img-fluid mb-3"/>
+
+                    <p>
+                        Para acionamento manual da Telefonia, vamos primeiro no Menu Lateral Esquerdo (*Engrenagem*) -> WAN e vamos adicionar uma nova regra em <b>New</b>, assim como fizemos na configuração da WAN. Agora mantenha habilitado o WAN. 
+                    </p>
+
+                    <p>
+                        No formulário que aparecer, vamos configurar da seguinte forma:
+                    </p>
+
+                    <ul>
+                        <li><b>Enable WAN</b>: Ative a caixa;</li>
+                        <li><b>Service Type</b>: VOIP;</li>
+                        <li><b>Enable VLAN</b>: Habilite a opção e adicione a VLAN ID para o valor 120, ou o valor que foi passado previamente;</li>
+                        <li><b>MTU</b>: Adicione o valor 1500;</li>
+                        <li><b>IP Acquisition Mode</b>: DHCP;</li>
+                    </ul>
+
+                    <p>
+                        E para finalizar essa etapa clique em "<b>Apply</b>";
+                    </p>
+
+                    <img src="/static/Imagens/ont_huawei_telefonia_manual_2.webp" class="img-fluid mb-3"/>
+
+                    <p>
+                        E para finalizar vamos no menu lateral novamente -> Voice -> VoIP Basic, e vamos apenas configurar algumas opções:
+                    </p>
+
+                    <ul>
+                        <li><b>Outbound Proxy Server Address</b>: Esse valor é padrão <b>138.94.87.116</b></li>
+                        <li><b>Outbound Proxy Server Port</b>: Normalmente passado para o técnico pela OS;</li>
+                    </ul>
+
+                    <p>
+                        Já as demais configurações são padrão e já vem habilitado.
+                    </p>
+
+                    <img src="/static/Imagens/ont_huawei_telefonia_manual_3.webp" class="img-fluid mb-3"/>
+                    <img src="/static/Imagens/ont_huawei_telefonia_manual_4.webp" class="img-fluid mb-3"/>
+
+                    <p>
+                        Mais a baixo devemos agora apenas preencher o formulário com o numero do cliente em <b>Registration User Name</b>, Habilitar o <b>Enable User</b>, e adicionar o valor 1 em <b>Associated POTS Port:</b>. Já em <b>Authentication User Name:</b> novamente colocamos o numero do cliente e a <b>Password</b> geralmente é passada ao técnico, porém costuma ser a padrão #Etecc111426. 
+                    </p>
+
+                    <img src="/static/Imagens/ont_huawei_telefonia_manual_5.webp" class="img-fluid mb-3"/>
+
+                    <p>
+                        E para finalizar, clique em "<b>Apply</b>".
+                    </p>
 
                 <h2 id="Sumario-8">Apontamento de Porta</h2>
                 <hr>
