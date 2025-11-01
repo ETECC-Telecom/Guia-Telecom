@@ -1,6 +1,6 @@
 {
   "name": "ETECC Guia Telecom",
-  "short_name": "ETECC GT",
+  "short_name": "ETECC GUIA",
   "description": "Um guia com dados básicos para os Técnicos externos do suporte da ETECC Telecom.",
   "start_url": "/index.html",
   "display": "standalone",
